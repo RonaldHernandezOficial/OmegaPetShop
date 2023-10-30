@@ -38,10 +38,10 @@ const Login = () => {
                         </div>
                     
                     <div className="social-auth-links text-center mb-3">
-                        <button type="submit" className="btn btn-block btn-primary">
+                        <Link to="/menu" className="btn btn-block btn-primary">
                             <i className="#"/> Ingresar
-                        </button>
-                        <Link to="#" className="btn btn-block btn-danger">
+                        </Link>
+                        <Link to="" className="btn btn-block btn-danger">
                             <i className="#"/> Crear cuenta
                         </Link>
                     </div>
