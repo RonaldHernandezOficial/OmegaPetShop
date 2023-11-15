@@ -23,6 +23,7 @@ const Login = () => {
     };
     
     return (
+        <center>
         <div className="login-box">
         <div className="login-logo">
             <b>Iniciar Sesión</b>
@@ -65,12 +66,15 @@ const Login = () => {
                 <button type="submit" className="btn btn-block btn-primary">
                     Ingresar
                 </button>
+                <Link to={'/crearCuenta'} className="btn btn-block btn-danger">
+                    Crear Cuenta
+                </Link>
                 </div>
             </form>
             </div>
         </div>
         </div>
-
+        </center>
     );
 }
 
