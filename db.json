@@ -1,19 +1,36 @@
 {
-  "posts": [
+  "Usuarios": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "nombre": "Ronald",
+      "email": "ronald@gmail.com",
+      "nit": "123",
+      "telefono": "321",
+      "password": "1",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nombre": "Mario",
+      "email": "mario@gmail.com",
+      "nit": "1233",
+      "telefono": "3214",
+      "password": "12",
+      "id": 2
+    },
+    {
+      "nombre": "Ronald Her",
+      "email": "ronaldher@gmail.com",
+      "nit": "321",
+      "telefono": "456",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "nombre": "Mario negro Hijueputa",
+      "email": "muycerdasxxx@porno.com",
+      "nit": "9874562100",
+      "telefono": "3115094215",
+      "password": "123456",
+      "id": 4
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

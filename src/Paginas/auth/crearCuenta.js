@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import APIInvoke from "../../utils/APIInvoke";
+import APIInvoke from '../../utils/APIInvoke.js'
 import swal from 'sweetalert';
 
 const CrearCuenta = () => {
@@ -14,7 +14,7 @@ const CrearCuenta = () => {
         confirmar: ''
     });
 
-    const {nombre, email, nit, telefono, password, confirmar } = usuario;
+    const { nombre, email, nit, telefono, password, confirmar } = usuario;
 
     const onChange = (e) =>{    
         setUsuario({
@@ -27,7 +27,7 @@ const CrearCuenta = () => {
         document.getElementById("nombre").focus();
     }, [])
 
-    const crearCuenta = async () =>{
+    const crearCuenta = async ()=>{
 
         if(password !==confirmar){
             const msg = "Las contraseñas no coinciden.";
@@ -45,15 +45,31 @@ const CrearCuenta = () => {
                     }
                 }
             });
-        }else {
-            const data = {
-            nombre: usuario.nombre,
-            email: usuario.email,
-            nit: usuario.nit,
-            telefono: usuario.telefono,
-            password: usuario.password
+        }else if (password.length < 6){
+            const msg = "Contraseña demasiado corta (mayor a 6 caracteres.).";
+                swal({
+                    title: 'Error',
+                    text: msg,
+                    icon: 'warning',
+                    buttons: {
+                        confirmar:{
+                            text: 'Ok',
+                            value: true,
+                            visible: true,
+                            className: 'btn btn-danger',
+                            closeModal: true
+                        }
+                    }
+                });
+            }else {
+                const data = {
+                nombre: usuario.nombre,
+                email: usuario.email,
+                nit: usuario.nit,
+                telefono: usuario.telefono,
+                password: usuario.password
         }
-        const response = await APIInvoke.invokePOST(`/api/usuarios`, data);
+        const response = await APIInvoke.invokePOST(`/Usuarios`, data);
         const mensaje = response.msg;
         }
     }
