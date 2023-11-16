@@ -24,9 +24,10 @@ const Login = () => {
     }
 
     //En esta linea va el useEffect, no se por que no funciona seguire adelante a ver si me funciona ponerlo después
-    /*useEffect(() => {
+    //Ya quedo solucionado, faltaba poner la id en el formulario xd
+    useEffect(() => {
         document.getElementById("email").focus();
-    }, [])*/
+    }, [])
 
 
     const iniciarSesion = async () => {
@@ -118,6 +119,7 @@ const Login = () => {
                     className="form-control"
                     placeholder="Email"
                     name="email"
+                    id='email'
                     value={email}
                     onChange={onChange}
                     required
@@ -134,6 +136,7 @@ const Login = () => {
                     className="form-control"
                     placeholder="Contraseña"
                     name="password"
+                    id='name'
                     value={password}
                     onChange={onChange}
                     required

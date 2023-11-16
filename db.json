@@ -63,6 +63,30 @@
       "telefono": "654321",
       "password": "123456",
       "id": 8
+    },
+    {
+      "nombre": "Jorge",
+      "email": "jorge@live.com",
+      "nit": "9012",
+      "telefono": "3214",
+      "password": "123456",
+      "id": 9
+    },
+    {
+      "nombre": "Jorge",
+      "email": "andresyate@gmail.com",
+      "nit": "214215",
+      "telefono": "521521",
+      "password": "123456",
+      "id": 10
+    },
+    {
+      "nombre": "Jorge Jaird",
+      "email": "andresyate@gmail.com",
+      "nit": "214215",
+      "telefono": "521521",
+      "password": "123456",
+      "id": 11
     }
   ]
 }
