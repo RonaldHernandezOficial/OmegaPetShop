@@ -9,8 +9,8 @@ function App() {
     <Fragment>
       <Router>
         <Routes>
-          <Route path='/login' exact element = {<Login/>}/>
-          <Route path='/' exact element = {<Menu/>}/>
+          <Route path='/' exact element = {<Login/>}/>
+          <Route path='/menu' exact element = {<Menu/>}/>
           <Route path='/crearCuenta' exact element = {<CrearCuenta/>}/>
 
         </Routes>

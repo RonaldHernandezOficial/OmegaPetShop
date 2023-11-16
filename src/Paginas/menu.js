@@ -2,8 +2,7 @@ import React from 'react';
 
 const Menu = () => {
     return (
-        <div>Hola</div>
-        
+        <div>Menú</div>
     )
 }
 

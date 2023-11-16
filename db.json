@@ -31,6 +31,38 @@
       "telefono": "3115094215",
       "password": "123456",
       "id": 4
+    },
+    {
+      "nombre": "Ronald",
+      "email": "Ronald@gmail.com",
+      "nit": "123456",
+      "telefono": "321456",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "nombre": "Mario Morelo",
+      "email": "mario@live.com",
+      "nit": "901234",
+      "telefono": "32145858",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "nombre": "Mario Morelo",
+      "email": "mario@live.com",
+      "nit": "901234",
+      "telefono": "32145858",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "nombre": "Cristian",
+      "email": "cristian@gmail.com",
+      "nit": "123456",
+      "telefono": "654321",
+      "password": "123456",
+      "id": 8
     }
   ]
 }
