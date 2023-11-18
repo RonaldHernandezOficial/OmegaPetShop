@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const HomeClientes=()=>{
     const listItemStyle = {
+        
         fontSize: "20px", // Tamaño de fuente más grande
         marginBottom: "10px", // Espacio entre elementos más grande
     };
@@ -28,7 +29,6 @@ const HomeClientes=()=>{
                         </p>
                     </Link>
                 </li>
-
             </ul>
         </nav>
 

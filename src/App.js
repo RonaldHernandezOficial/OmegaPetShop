@@ -18,6 +18,7 @@ import TareasEditar from './Paginas/proyectoTienda/TareasEditar';
 import EditarPedidos from './Paginas/proyectoPedidos/EditarPedidos';
 import ComprarProductos from './Paginas/proyectoClientes/ComprarProductos';
 import VerProductos from './Paginas/proyectoClientes/VerProductos';
+import VerProductosClientes from './Paginas/proyectoClientes/VerProductosClientes';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/tareas-editar/:idProyecto" exact element={<TareasEditar/>}/>
           <Route path="/comprarProductos/:idVenta" exact element={<ComprarProductos/>}/>
           <Route path="/verProductos" exact element={<VerProductos/>}/>
+          <Route path="/productosClientes/:idProyecto" exact element={<VerProductosClientes/>}/>
         </Routes>
       </Router>
     </Fragment>

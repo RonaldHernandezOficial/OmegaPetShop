@@ -119,8 +119,8 @@ const onSubmit = (e) => {
                 <ContentHeader
                     titulo={tituloPag}
                     breadCrumb1={"Formulario compras"}
-                    breadCrumb2={"Actualizar"}
-                    ruta1={`/verProductos/${idTienda}@${nombreTienda}`}
+                    breadCrumb2={"Comprar"}
+                    ruta1={`/menuClientes`}
                 />
                 <section className="content">
                     <div className="card">

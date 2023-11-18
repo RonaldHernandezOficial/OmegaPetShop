@@ -38,7 +38,7 @@ const VerTiendas = () => {
             titulo={"Listado de Tiendas"}
             breadCrumb1={"Inicio"}
             breadCrumb2={"Listado de Tiendas"}
-            ruta1={"/home2"}
+            ruta1={"/menuClientes"}
         />
     <div className="card-body">
         <table className="table table-bordered">
@@ -57,7 +57,7 @@ const VerTiendas = () => {
                 <td>{tienda.id}</td>
                 <td>{tienda.nombre}</td>
                 <td>{tienda.direccion}</td>
-                <td> <Link to={`/tareas-admin/${tienda.id}@${tienda.nombre}@${tienda.direccion}`} className="btn tbn-sm btn-danger">Ver productos</Link></td>
+                <td> <Link to={`/productosClientes/${tienda.id}@${tienda.nombre}@${tienda.direccion}`} className="btn tbn-sm btn-danger">Ver productos</Link></td>
                 <td> <Link to={`/comprarProductos/${tienda.id}@${tienda.nombre}`} className="btn btn-sm btn-primary">Comprar productos</Link></td>
             </tr>
             ))}
