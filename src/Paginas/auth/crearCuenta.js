@@ -11,9 +11,10 @@ const CrearCuenta = () => {
     telefono: "",
     password: "",
     confirmar: "",
+    rol: 'cliente' //El rol solo se cambiara si se necesita cambiarlo, es el bd.json
     });
 
-    const { nombre, email, nit, telefono, password, confirmar } = usuario;
+    const { nombre, email, nit, telefono, password, confirmar, rol } = usuario;
 
     const onChange = (e) => {
     setUsuario({
@@ -41,7 +42,7 @@ const CrearCuenta = () => {
 
             } catch (error) {
                 console.error(error);
-                return false; // Maneja el error si la solicitud falla
+                return false; // Maneja el error si la solicitud falla 
             }
         };
 
@@ -85,6 +86,7 @@ const CrearCuenta = () => {
         nit: usuario.nit,
         telefono: usuario.telefono,
         password: usuario.password,
+        rol: usuario.rol // Hay que asegurarse que se envie bien al servidor
         };                                          
         const response = await APIInvoke.invokePOST(`/Usuarios`, data);
         const mensaje = response.msg;
@@ -260,6 +262,13 @@ const CrearCuenta = () => {
                 </div>
                 </div>
 
+                <div className="input-group mb-3">
+                    <label htmlFor="rol">Seleccione su rol:</label>
+                        <select className="form-control" id="rol" name="rol" value={rol} onChange={onChange} required>
+                            <option value="cliente">Cliente</option>
+                            <option value="administrador">Administrador</option>
+                        </select>
+                </div>
                 <div className="social-auth-links text-center mb-3">
                 <button type="submit" className="btn btn-block btn-primary">
                     Crear Cuenta

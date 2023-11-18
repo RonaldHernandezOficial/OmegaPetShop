@@ -1,92 +1,106 @@
 {
   "Usuarios": [
     {
-      "nombre": "Ronald",
-      "email": "ronald@gmail.com",
-      "nit": "123",
-      "telefono": "321",
-      "password": "1",
+      "nombre": "Ronald ",
+      "email": "ronald@cliente.com",
+      "nit": "9087631249",
+      "telefono": "3224901292",
+      "password": "123456",
+      "rol": "cliente",
       "id": 1
     },
     {
-      "nombre": "Mario",
-      "email": "mario@gmail.com",
-      "nit": "1233",
-      "telefono": "3214",
-      "password": "12",
+      "nombre": "Ronald Hernandez",
+      "email": "ronald@administrador.com",
+      "nit": "9087631249",
+      "telefono": "3224901292",
+      "password": "123456",
+      "rol": "administrador",
       "id": 2
     },
     {
-      "nombre": "Ronald Her",
-      "email": "ronaldher@gmail.com",
-      "nit": "321",
-      "telefono": "456",
+      "nombre": "Martha",
+      "email": "martha@gmail.com",
+      "nit": "90451668186",
+      "telefono": "3225164962",
       "password": "123456",
+      "rol": "administrador",
       "id": 3
     },
     {
-      "nombre": "Mario negro Hijueputa",
-      "email": "muycerdasxxx@porno.com",
-      "nit": "9874562100",
-      "telefono": "3115094215",
+      "nombre": "Felipe",
+      "email": "felipe@gmail.com",
+      "nit": "94060512655",
+      "telefono": "356894050",
       "password": "123456",
+      "rol": "cliente",
       "id": 4
     },
     {
-      "nombre": "Ronald",
-      "email": "Ronald@gmail.com",
-      "nit": "123456",
-      "telefono": "321456",
+      "nombre": "Martha",
+      "email": "martha@gmail.com",
+      "nit": "90451668186",
+      "telefono": "3225164962",
       "password": "123456",
       "id": 5
+    }
+  ],
+  "Categorias": [
+    {
+      "nombre": "Huellitas2.0",
+      "id": 1
     },
     {
-      "nombre": "Mario Morelo",
-      "email": "mario@live.com",
-      "nit": "901234",
-      "telefono": "32145858",
-      "password": "123456",
-      "id": 6
+      "nombre": "comida",
+      "id": 2
+    }
+  ],
+  "Tiendas": [
+    {
+      "nombre": "Huellitas 2.0",
+      "direccion": "cll 158 c 200",
+      "id": 1
     },
     {
-      "nombre": "Mario Morelo",
-      "email": "mario@live.com",
-      "nit": "901234",
-      "telefono": "32145858",
-      "password": "123456",
-      "id": 7
+      "nombre": "Huellitas 3.0",
+      "direccion": "cll 158 c 300",
+      "id": 2
+    }
+  ],
+  "Ventas": [
+    {
+      "idP": "1",
+      "nombreProd": "Huellitas 2.0",
+      "nombre": "D",
+      "direccion": "",
+      "telefono": "",
+      "id": 1
     },
     {
-      "nombre": "Cristian",
-      "email": "cristian@gmail.com",
-      "nit": "123456",
-      "telefono": "654321",
-      "password": "123456",
-      "id": 8
+      "idP": "1",
+      "nombreProd": "Huellitas 2.0",
+      "nombre": "Mirringo",
+      "direccion": "cll 158 c 200 a 546",
+      "telefono": "3224568791",
+      "id": 2
     },
     {
-      "nombre": "Jorge",
-      "email": "jorge@live.com",
-      "nit": "9012",
-      "telefono": "3214",
-      "password": "123456",
-      "id": 9
-    },
+      "idP": "1",
+      "nombreProd": "Huellitas 2.0",
+      "nombre": "Mirringo",
+      "direccion": "cll 158 c 200 a 546124",
+      "telefono": "3224568791",
+      "id": 3
+    }
+  ],
+  "Productos": [
     {
-      "nombre": "Jorge",
-      "email": "andresyate@gmail.com",
-      "nit": "214215",
-      "telefono": "521521",
-      "password": "123456",
-      "id": 10
-    },
-    {
-      "nombre": "Jorge Jaird",
-      "email": "andresyate@gmail.com",
-      "nit": "214215",
-      "telefono": "521521",
-      "password": "123456",
-      "id": 11
+      "idT": "1",
+      "idC": "comida",
+      "nombre": "Dog Show",
+      "precio": "30000",
+      "estado": false,
+      "id": 1
     }
   ]
 }

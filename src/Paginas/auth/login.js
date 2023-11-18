@@ -84,15 +84,12 @@ const Login = () => {
                         }
                     }
                 });
-            }else{
-                //Contenemos el token de acceso
-                const jwt = response.token;
-
-                //Guardar el token en el localstorage
-                localStorage.setItem('token', jwt);
-
-                //Redireccionamos al home o pagina principal
-                navigate("/menu")
+            }else {
+                if (usuarioExistente.rol === 'cliente') {
+                    navigate("/menuClientes");
+                } else {
+                    navigate("/menu");
+                }
             }
         }
     }
@@ -104,7 +101,6 @@ const Login = () => {
     }
 
     return(
-        <center>
         <div className="login-box">
         <div className="login-logo">
             <b>Iniciar Sesión</b>
@@ -159,7 +155,6 @@ const Login = () => {
             </div>
         </div>
         </div>
-        </center>
     );
 }
 

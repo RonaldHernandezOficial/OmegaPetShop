@@ -30,14 +30,14 @@ const Home = () => {
                 </li>
 
                 <li className="nav-item" style={listItemStyle}>
-                    <Link to={"/visualizar-categorias"} className="nav-link">
+                    <Link to={"/visualizarCategorias"} className="nav-link">
                         <i className="nav-icon fas fa-laptop" />
                         <p>Categorias</p>
                     </Link>
                 </li>
 
                 <li className="nav-item" style={listItemStyle}>
-                    <Link to={"/visualizar-pedidos"} className="nav-link">
+                    <Link to={"/verPedidos"} className="nav-link">
                         <i className="nav-icon fas fa-truck" />
                         <p>Pedidos</p>
                     </Link>
