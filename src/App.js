@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Login from './Paginas/auth/login';
-import Menu from './Paginas/menu'
+import IniciarSesion from './Paginas/auth/iniciarSesion';
+import Menu from './Paginas/menu';
 import CrearCuenta from './Paginas/auth/crearCuenta';
 import ProyectosAdmin from './Paginas/proyectoTienda/ProyectosAdmin';
 import ProyectosCrear from './Paginas/proyectoTienda/ProyectosCrear';
@@ -19,16 +20,19 @@ import EditarPedidos from './Paginas/proyectoPedidos/EditarPedidos';
 import ComprarProductos from './Paginas/proyectoClientes/ComprarProductos';
 import VerProductos from './Paginas/proyectoClientes/VerProductos';
 import VerProductosClientes from './Paginas/proyectoClientes/VerProductosClientes';
+import CrearCuentaAdministrador from './Paginas/auth/crearCuentaAdministrador';
 
 function App() {
   return (
     <Fragment>
       <Router>
         <Routes>
-          <Route path='/' exact element = {<Login/>}/>
+          <Route path='/' exact element = {<IniciarSesion/>}/>
+          <Route path='/login' exact element = {<Login/>}/>
           <Route path='/menu' exact element = {<Menu/>}/>
           <Route path='/menuClientes' exact element = {<MenuClientes/>}/>
           <Route path='/crearCuenta' exact element = {<CrearCuenta/>}/>
+          <Route path='/crearCuentaAdministrador' exact element = {<CrearCuentaAdministrador/>}/>
           <Route path='/proyectos-admin' exact element = {<ProyectosAdmin/>}/>
           <Route path='/proyectos-crear' exact element = {<ProyectosCrear/>}/>
           <Route path='/VerTiendas' exact element = {<VerTiendasClientes/>}/>

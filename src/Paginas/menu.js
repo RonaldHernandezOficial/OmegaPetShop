@@ -61,6 +61,7 @@ const Menu = () => {
                   <Link to={"/verPedidos"} className="small-box-footer">
                     Ver pedidos <i className="fas fa-arrow-circle-right"></i>
                   </Link>
+                
                 </div>
               </div>
 

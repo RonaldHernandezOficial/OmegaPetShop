@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import APIInvoke from "../../utils/APIInvoke.js";
 import swal from "sweetalert";
 
-const CrearCuenta = () => {
+const CrearCuentaAdministrador = () => {
     const [usuario, setUsuario] = useState({
     nombre: "",
     email: "",
@@ -11,7 +11,7 @@ const CrearCuenta = () => {
     telefono: "",
     password: "",
     confirmar: "",
-    rol: 'cliente' //El rol solo se cambiara si se necesita cambiarlo, es el bd.json
+    rol: 'administrador' //El rol solo se cambiara si se necesita cambiarlo, es el bd.json
     });
 
     const { nombre, email, nit, telefono, password, confirmar, rol } = usuario;
@@ -147,7 +147,7 @@ const CrearCuenta = () => {
         <div className="login-box">
         <div className="login-logo">
             <Link to={"#"}>
-            <b>Crear</b> Cuenta
+            <b>Crear</b> Cuenta <b> Administrador</b>
             </Link>
         </div>
         <div className="card">
@@ -261,6 +261,7 @@ const CrearCuenta = () => {
                     </div>
                 </div>
                 </div>
+
                 <div className="social-auth-links text-center mb-3">
                 <button type="submit" className="btn btn-block btn-primary">
                     Crear Cuenta
@@ -277,4 +278,4 @@ const CrearCuenta = () => {
         );
 };
 
-export default CrearCuenta;
+export default CrearCuentaAdministrador;

@@ -1,166 +1,63 @@
 {
   "Usuarios": [
     {
-      "nombre": "Ronald ",
-      "email": "ronald@cliente.com",
-      "nit": "9087631249",
-      "telefono": "3224901292",
+      "nombre": "Jhoan Fonseca",
+      "email": "jhoan1@prueba.com",
+      "nit": "1653216621",
+      "telefono": "512521521",
       "password": "123456",
       "rol": "cliente",
       "id": 1
     },
     {
-      "nombre": "Ronald Hernandez",
-      "email": "ronald@administrador.com",
-      "nit": "9087631249",
-      "telefono": "3224901292",
+      "nombre": "Narly",
+      "email": "narly@gmail.com",
+      "nit": "901345672",
+      "telefono": "3214509234",
       "password": "123456",
       "rol": "administrador",
       "id": 2
     },
     {
-      "nombre": "Martha",
-      "email": "martha@gmail.com",
-      "nit": "90451668186",
-      "telefono": "3225164962",
-      "password": "123456",
-      "rol": "administrador",
-      "id": 3
-    },
-    {
-      "nombre": "Felipe",
-      "email": "felipe@gmail.com",
-      "nit": "94060512655",
-      "telefono": "356894050",
+      "nombre": "ronald",
+      "email": "ronald@cliente.com",
+      "nit": "90132532632",
+      "telefono": "3225125623",
       "password": "123456",
       "rol": "cliente",
-      "id": 4
-    },
-    {
-      "nombre": "Martha",
-      "email": "martha@gmail.com",
-      "nit": "90451668186",
-      "telefono": "3225164962",
-      "password": "123456",
-      "id": 5
-    },
-    {
-      "nombre": "Jaykel",
-      "email": "jaykel@administrador.com",
-      "nit": "987654321",
-      "telefono": "123456789",
-      "password": "123456",
-      "rol": "administrador",
-      "id": 6
+      "id": 3
     }
   ],
   "Categorias": [
     {
-      "nombre": "Huellitas2.0",
+      "nombre": "Jabon",
       "id": 1
-    },
-    {
-      "nombre": "comida",
-      "id": 2
-    },
-    {
-      "nombre": "jabon",
-      "id": 3
     }
   ],
   "Tiendas": [
     {
-      "nombre": "Huellitas 2.0",
-      "direccion": "cll 158 c 200",
+      "nombre": "huellitas 2.0",
+      "direccion": "cll 142 c # 54 a 05",
       "id": 1
-    },
-    {
-      "nombre": "Huellitas 3.0",
-      "direccion": "cll 158 c 300",
-      "id": 2
-    },
-    {
-      "nombre": "Patitas",
-      "direccion": "Cll 129c # 59 b 12",
-      "id": 3
-    },
-    {
-      "nombre": "Bigotes 2.0",
-      "direccion": "Cll 54 ",
-      "id": 4
     }
   ],
   "Ventas": [
     {
       "idP": "1",
-      "nombreProd": "Huellitas 2.0",
-      "nombre": "D",
-      "direccion": "",
-      "telefono": "",
+      "nombreProd": "huellitas 2.0",
+      "nombre": "Ronald",
+      "direccion": "cll 142 c # 53334 a 05",
+      "telefono": "3215421521",
       "id": 1
-    },
-    {
-      "idP": "1",
-      "nombreProd": "Huellitas 2.0",
-      "nombre": "Mirringo",
-      "direccion": "cll 158 c 200 a 546",
-      "telefono": "3224568791",
-      "id": 2
-    },
-    {
-      "idP": "1",
-      "nombreProd": "Huellitas 2.0",
-      "nombre": "Mirringo",
-      "direccion": "cll 158 c 200 a 546124",
-      "telefono": "3224568791",
-      "id": 3
-    },
-    {
-      "idP": "1",
-      "nombreProd": "Huellitas 2.0",
-      "nombre": "Mi",
-      "direccion": "",
-      "telefono": "",
-      "id": 4
-    },
-    {
-      "idP": "4",
-      "nombreProd": "Bigotes 2.0",
-      "nombre": "Monda",
-      "direccion": "cll 158 c 200 a 546124",
-      "telefono": "3486415341019",
-      "id": 5
     }
   ],
   "Productos": [
     {
       "idT": "1",
-      "idC": "comida",
-      "nombre": "Dog Show",
-      "precio": "30000",
-      "estado": false,
+      "idC": "Comida de mascotas",
+      "nombre": "Mirringo",
+      "precio": "23000",
       "id": 1
-    },
-    {
-      "idT": "3",
-      "idC": "Jabon",
-      "nombre": "Jabon antipulgas",
-      "precio": "40000",
-      "id": 2
-    },
-    {
-      "idT": "2",
-      "idC": "Jabon",
-      "nombre": "Jabon de baño",
-      "precio": "4000",
-      "id": 3
-    },
-    {
-      "idT": "4",
-      "idC": "Jabon",
-      "nombre": "Jabon de Cuerpo",
-      "precio": "9999",
-      "id": 4
     }
   ]
 }
