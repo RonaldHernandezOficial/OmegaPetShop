@@ -42,6 +42,13 @@ const Home = () => {
                         <p>Pedidos</p>
                     </Link>
                 </li>
+
+                <li className="nav-item" style={listItemStyle}>
+                    <Link to={"/"} className="nav-link">
+                        <i className="nav-icon fas fa-laptop" />
+                        <p>Crear Cuenta</p>
+                    </Link>
+                </li>
             </ul>
         </nav>
     );

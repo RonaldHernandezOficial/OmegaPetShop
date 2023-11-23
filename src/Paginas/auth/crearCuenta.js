@@ -265,7 +265,7 @@ const CrearCuenta = () => {
                 <button type="submit" className="btn btn-block btn-primary">
                     Crear Cuenta
                 </button>
-                <Link to={"/"} className="btn btn-block btn-danger">
+                <Link to={"/login"} className="btn btn-block btn-danger">
                     Regresar al login
                 </Link>
                 </div>
