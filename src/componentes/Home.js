@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const Home = () => {
     const listItemStyle = {
         fontSize: "20px", // Tamaño de fuente más grande

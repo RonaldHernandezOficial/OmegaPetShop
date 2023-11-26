@@ -5,7 +5,7 @@ import MenuClientes from "./HomeClientes";
 
 const SidebarContainerClientes = () => {
     return ( 
-        <aside className="main-sidebar sidebar-dark-primary elevation-4">
+        <aside className="main-sidebar sidebar-dark-primary elevation-4 bg-primary">
         <Link to={"/menuClientes"} className="brand-link">
             <img
                 src={Logo}
@@ -21,7 +21,7 @@ const SidebarContainerClientes = () => {
                     &nbsp;
                 </div>
                 <div className="info">
-                    <Link to={"/menuClientes"} className="d-block">
+                    <Link to={"/menuClientes"} className="d-block text-dark">
                         Menu principal
                     </Link>
                 </div>

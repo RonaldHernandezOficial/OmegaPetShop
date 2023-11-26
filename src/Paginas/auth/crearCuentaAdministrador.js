@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import APIInvoke from "../../utils/APIInvoke.js";
 import swal from "sweetalert";
 
+
 const CrearCuentaAdministrador = () => {
     const [usuario, setUsuario] = useState({
     nombre: "",

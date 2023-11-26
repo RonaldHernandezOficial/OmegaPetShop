@@ -1,9 +1,8 @@
 import React from "react";
-import Navbar from "../../componentes/Navbar";
-import SidebarContainer from "../../componentes/SidebarContainer";
 import ContentHeader from "../../componentes/ContentHeader";
 import Footer from "../../componentes/Footer";
 import { Link } from "react-router-dom";
+
 
 const IniciarSesion = () => {
     return (
@@ -51,9 +50,9 @@ const IniciarSesion = () => {
                         </div>
                     </div>
                 </section>
-            </div>
-            <Footer></Footer>
+            </div>      
             </center>
+            <Footer></Footer>
         </div>
     );
 };

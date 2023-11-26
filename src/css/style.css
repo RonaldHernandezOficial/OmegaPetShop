@@ -1,0 +1,8 @@
+body{
+    background-image: url("../img/Omega (1).png");
+    background-repeat: cover; /* Change to 'cover' to fit the screen*/
+    padding: auto;
+    background-repeat: no-repeat;
+    margin: auto;
+}
+

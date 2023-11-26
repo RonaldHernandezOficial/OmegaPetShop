@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ContentHeader from "../componentes/ContentHeader";
 import Navbar from "../componentes/Navbar";
-
+import "../css/style.css";
 import Footer from "../componentes/Footer";
 import SidebarContainerClientes from "../componentes/SidebarContainerClientes";
 

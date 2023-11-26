@@ -1,63 +1,34 @@
 {
   "Usuarios": [
     {
-      "nombre": "Jhoan Fonseca",
-      "email": "jhoan1@prueba.com",
-      "nit": "1653216621",
-      "telefono": "512521521",
+      "nombre": "Ronald",
+      "email": "ronald@administrador.com",
+      "nit": "948981581158",
+      "telefono": "5891189189",
       "password": "123456",
-      "rol": "cliente",
+      "rol": "administrador",
       "id": 1
     },
     {
-      "nombre": "Narly",
-      "email": "narly@gmail.com",
-      "nit": "901345672",
-      "telefono": "3214509234",
-      "password": "123456",
-      "rol": "administrador",
-      "id": 2
-    },
-    {
-      "nombre": "ronald",
-      "email": "ronald@cliente.com",
-      "nit": "90132532632",
-      "telefono": "3225125623",
+      "nombre": "Mario",
+      "email": "mario@live.com",
+      "nit": "984084048",
+      "telefono": "32120584089",
       "password": "123456",
       "rol": "cliente",
-      "id": 3
+      "id": 2
     }
   ],
   "Categorias": [
-    {
-      "nombre": "Jabon",
-      "id": 1
-    }
+
   ],
   "Tiendas": [
-    {
-      "nombre": "huellitas 2.0",
-      "direccion": "cll 142 c # 54 a 05",
-      "id": 1
-    }
+
   ],
   "Ventas": [
-    {
-      "idP": "1",
-      "nombreProd": "huellitas 2.0",
-      "nombre": "Ronald",
-      "direccion": "cll 142 c # 53334 a 05",
-      "telefono": "3215421521",
-      "id": 1
-    }
+
   ],
   "Productos": [
-    {
-      "idT": "1",
-      "idC": "Comida de mascotas",
-      "nombre": "Mirringo",
-      "precio": "23000",
-      "id": 1
-    }
+
   ]
 }

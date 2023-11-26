@@ -4,6 +4,7 @@ import SidebarContainer from "../componentes/SidebarContainer";
 import ContentHeader from "../componentes/ContentHeader";
 import Footer from "../componentes/Footer";
 import { Link } from "react-router-dom";
+import "../css/style.css";
 
 const Menu = () => {
   return (
