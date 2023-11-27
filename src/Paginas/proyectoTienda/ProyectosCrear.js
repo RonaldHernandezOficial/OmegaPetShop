@@ -30,58 +30,65 @@ const ProyectosCrear = () => {
     }, [])
 
     const crearProyecto = async () =>{
-        const data ={
-            nombre: tiendas.nombre,
-            direccion:tiendas.direccion
-        }
-        const response = await APIInvoke.invokePOST('/Tiendas', data);
-        const idProyecto = response.id;
+        try {
+            const tiendaId = localStorage.getItem("id");
 
-        if (idProyecto==="nombre"){
-            const msg = "La tienda no fue registrada correctamente";
+            const data ={
+            nombre: tiendas.nombre,
+            direccion:tiendas.direccion,
+            tiendaId: tiendaId
+            }
+            const response = await APIInvoke.invokePOST('/Tiendas', data);
+            const idProyecto = response.id;
+
+            if (idProyecto==="nombre"){
+                const msg = "La tienda no fue registrada correctamente";
+                new swal({
+                    title: 'Error',
+                    text: msg,
+                    icon: 'error',
+                    buttons: {
+                        confirm: {
+                            text: 'Ok',
+                            value: true,
+                            visible: true,
+                            className: 'btn btn-danger',
+                            closeModal: true
+                        }
+                    }
+                });
+        }else{
+            navigate("/proyectos-admin")
+            const msg = "La tienda fue creada correctamente";
             new swal({
-                title: 'Error',
+                title: 'Información',
                 text: msg,
-                icon: 'error',
+                icon: 'success',
                 buttons: {
                     confirm: {
                         text: 'Ok',
                         value: true,
                         visible: true,
-                        className: 'btn btn-danger',
+                        className: 'btn btn-primary',
                         closeModal: true
                     }
                 }
             });
-    }else{
-        navigate("/proyectos-admin")
-        const msg = "La tienda fue creada correctamente";
-        new swal({
-            title: 'Información',
-            text: msg,
-            icon: 'success',
-            buttons: {
-                confirm: {
-                    text: 'Ok',
-                    value: true,
-                    visible: true,
-                    className: 'btn btn-primary',
-                    closeModal: true
-                }
-            }
-        });
 
-        setTiendas({
-            nombre:'',
-            direccion:''
-        })
-    }
-    }
+            setTiendas({
+                nombre:'',
+                direccion:''
+            });
+        }
+        } catch (error) {
+            console.error("Error al crear la tienda:", error);
+        }
+    };
+
     const onSubmit =(e)=>{
         e.preventDefault();
         crearProyecto()
     }
-
 
     return (
         <div className="wrapper">

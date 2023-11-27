@@ -186,7 +186,7 @@ const CrearCuentaAdministrador = () => {
                 />
                 <div className="input-group-append">
                     <div className="input-group-text">
-                    <span className="fas fa-envelope"></span>
+                    <span className="fas fa-home"></span>
                     </div>
                 </div>
                 </div>
@@ -204,7 +204,7 @@ const CrearCuentaAdministrador = () => {
                 />
                 <div className="input-group-append">
                     <div className="input-group-text">
-                    <span className="fas fa-envelope"></span>
+                    <span className="fas fa-phone"></span>
                     </div>
                 </div>
                 </div>

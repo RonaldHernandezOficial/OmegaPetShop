@@ -5,7 +5,7 @@ import Logo from '../../node_modules/admin-lte/dist/img/AdminLTELogo.png';
 
 const SidebarContainer = () => {
     return (
-        <aside className="main-sidebar sidebar-danger-primary elevation-4 bg-warning">
+        <aside className="main-sidebar sidebar-danger-primary elevation-4 bg-orange">
             <Link to={"/menu"} className="brand-link">
                 <img src={Logo}
                 alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{ opacity: '.8' }} />

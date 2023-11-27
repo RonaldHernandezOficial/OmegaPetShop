@@ -11,11 +11,11 @@ const Menu = () => {
     <div className="wrapper">
       <Navbar></Navbar>
       <SidebarContainer></SidebarContainer>
-      <div className="content-wrapper">
+      <div className="body content-wrapper">
         <ContentHeader
-          titulo={"Panel de Administrador"}
+          titulo={"Panel de tienda"}
           breadCrumb1={"Inicio"}
-          breadCrumb2={"Panel de Administrador"}
+          breadCrumb2={"Panel de tienda"}
           ruta1={"/menu"}
         />
         <section className="content">
@@ -31,13 +31,13 @@ const Menu = () => {
                     <i className="fas fa-shopping-bag"></i>
                   </div>
                   <Link to={"/proyectos-admin"} className="small-box-footer">
-                    Crear tiendas <i className="fas fa-arrow-circle-right"></i>
+                    Registra tus productos <i className="fas fa-arrow-circle-right"></i>
                   </Link>
                 </div>
               </div>
 
               <div className="col-lg-7 col-8">
-                <div className="small-box bg-orange">
+                <div className="small-box bg-green">
                   <div className="inner">
                     <h3>Categoría</h3>
                     <p>&nbsp;</p>

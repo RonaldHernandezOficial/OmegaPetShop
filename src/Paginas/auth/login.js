@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import APIInvoke from "../../utils/APIInvoke.js";
+import axios from 'axios';
 import swal from "sweetalert";
 
 const Login = () => {
@@ -35,6 +36,7 @@ const Login = () => {
             try {
                 const response = await APIInvoke.invokeGET(
                     `/Usuarios?email=${email}&password=${password}`
+            
                 );
                 if (response && response.length > 0) {
                     return response[0]; // Devuelve el primer usuario que coincide
@@ -68,6 +70,12 @@ const Login = () => {
                 `/Usuarios?email=${email}&password=${password}`
             );
 
+            // Contener el token de acceso
+            const jwt = usuarioExistente.id;
+
+            // Guardar el token en el local storage
+            localStorage.setItem('id', jwt);
+
             if (!usuarioExistente) {
                 const msg = "No fue posible iniciar sesión, verifique los datos ingresados.";
                 new swal({
@@ -84,10 +92,11 @@ const Login = () => {
                         }
                     }
                 });
+                
             }else {
                 if (usuarioExistente.rol === 'cliente') {
                     navigate("/menuClientes");
-                } else {
+                }else {
                     navigate("/menu");
                 }
             }

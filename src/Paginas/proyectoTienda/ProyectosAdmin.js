@@ -68,7 +68,7 @@ const ProyectosAdmin = () => {
             });
             cargarTiendas();
         } else {
-            const msg = "La tienda No Pudo Ser Eliminado";
+            const msg = "La tienda no pudo ser eliminada";
             new swal({
                 title: "Error",
                 text: msg,
@@ -93,7 +93,7 @@ const ProyectosAdmin = () => {
             <div className="content-wrapper">
 
                 <ContentHeader
-                    titulo={"Listado de tiendas"}
+                    titulo={"Ingresa tus productos"}
                     breadCrumb1={"Inicio"}
                     breadCrumb2={"Tiendas"}
                     ruta1={"/menu"}
@@ -101,7 +101,7 @@ const ProyectosAdmin = () => {
                 <section className="content">
                     <div className="card">
                         <div className="card-header">
-                        <h3 className="card-title"><Link to={"/proyectos-crear"} className="btn btn-block btn-primary btn-sm">Registrar tienda</Link></h3>
+                        <h3 className="card-title"><Link to={"/proyectos-crear"} className="btn btn-block btn-primary btn-sm">Registrar productos</Link></h3>
                             <div className="card-tools">
                         
 

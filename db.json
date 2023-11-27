@@ -17,18 +17,109 @@
       "password": "123456",
       "rol": "cliente",
       "id": 2
+    },
+    {
+      "nombre": "Narly",
+      "email": "narly@administrador.com",
+      "nit": "9017654438",
+      "telefono": "3225125623",
+      "password": "123456",
+      "rol": "administrador",
+      "id": 3
+    },
+    {
+      "nombre": "Ronald",
+      "email": "ronald@cliente.com",
+      "nit": "908742189821",
+      "telefono": "3214705892",
+      "password": "123456",
+      "rol": "cliente",
+      "id": 4
+    },
+    {
+      "nombre": "Mario Hernandez",
+      "email": "mario@gmail.com",
+      "nit": "53296705325375039832",
+      "telefono": "876532985032",
+      "password": "123456",
+      "rol": "cliente",
+      "id": 5
     }
   ],
   "Categorias": [
-
+    {
+      "nombre": "Comida",
+      "id": 1
+    }
   ],
   "Tiendas": [
-
+    {
+      "nombre": "Huellitas",
+      "direccion": "cll 142 c # 09 - 45",
+      "tiendaId": "3",
+      "id": 1
+    }
   ],
   "Ventas": [
-
+    {
+      "idP": "1",
+      "nombreProd": "Huellitas",
+      "nombre": "Ronald ",
+      "direccion": "",
+      "telefono": "",
+      "id": 1
+    },
+    {
+      "idP": "1",
+      "nombreProd": "Huellitas",
+      "nombre": "Ronald Hernandez",
+      "direccion": "cll 142 c # 53 a 05",
+      "telefono": "3214705892",
+      "id": 2
+    },
+    {
+      "idP": "1",
+      "nombreProd": "Huellitas",
+      "nombre": "Jhoan Fonseca",
+      "direccion": "fdhsgdshgd",
+      "telefono": "21|4215321521",
+      "id": 3
+    },
+    {
+      "idP": "1",
+      "nombreProd": "Huellitas",
+      "nombre": "Jhoan Fonseca",
+      "direccion": "wagsgsa",
+      "telefono": "gsggsagsaga",
+      "userId": "4",
+      "id": 4
+    },
+    {
+      "idP": "1",
+      "nombreProd": "Huellitas",
+      "nombre": "Mario",
+      "direccion": "cll 142 c # 53334 a 05",
+      "telefono": "123456",
+      "userId": "5",
+      "id": 5
+    },
+    {
+      "idP": "1",
+      "nombreProd": "Huellitas",
+      "nombre": "Mario",
+      "direccion": "cll 142 c # 53334 a 05",
+      "telefono": "3215421521",
+      "userId": "5",
+      "id": 6
+    }
   ],
   "Productos": [
-
+    {
+      "idT": "1",
+      "idC": "Comida",
+      "nombre": "Dog Show",
+      "precio": "14000",
+      "id": 1
+    }
   ]
 }

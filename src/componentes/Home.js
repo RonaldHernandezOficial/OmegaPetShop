@@ -31,6 +31,13 @@ const Home = () => {
                 </li>
 
                 <li className="nav-item" style={listItemStyle}>
+                    <Link to={"#"} className="nav-link">
+                        <i className="nav-icon fas fa-hammer" />
+                        <p>Productos</p>
+                    </Link>
+                </li>
+
+                <li className="nav-item" style={listItemStyle}>
                     <Link to={"/visualizarCategorias"} className="nav-link">
                         <i className="nav-icon fas fa-laptop" />
                         <p>Categorias</p>
@@ -46,7 +53,7 @@ const Home = () => {
 
                 <li className="nav-item" style={listItemStyle}>
                     <Link to={"/"} className="nav-link">
-                        <i className="nav-icon fas fa-laptop" />
+                        <i className="nav-icon fas fa-user" />
                         <p>Crear Cuenta</p>
                     </Link>
                 </li>

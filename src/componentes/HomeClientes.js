@@ -30,9 +30,17 @@ const HomeClientes=()=>{
                     </Link>
                 </li>
 
+
+                <li className="nav-item" style={listItemStyle}>
+                    <Link to={"/verPedidosCliente"} className="nav-link">
+                        <i className="nav-icon fas fa-truck" />
+                        <p>Pedidos</p>
+                    </Link>
+                </li>
+
                 <li className="nav-item" style={listItemStyle}>
                     <Link to={"/crearCuenta"} className="nav-link">
-                        <i className="nav-icon fas fa-laptop" />
+                        <i className="nav-icon fas fa-user" />
                         <p>
                             Crear Cuenta
                         </p>

@@ -24,6 +24,7 @@ const nombreTienda = arreglo[3]
 
 const tituloPag = `Compra tus productos`
 
+const userId = localStorage.getItem("id");
 
 const [venta, setVentas] = useState({
     idP: idProducto,
@@ -55,7 +56,8 @@ const realizarVenta = async () => {
         nombreProd:nombreProducto,
         nombre:venta.nombre,
         direccion:venta.direccion,
-        telefono:venta.telefono
+        telefono:venta.telefono,
+        userId: userId // Agrega el ID de usuario al ticket
     }
 
     console.log(data)

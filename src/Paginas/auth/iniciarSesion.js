@@ -25,7 +25,7 @@ const IniciarSesion = () => {
                                         <p>&nbsp;</p>
                                     </div>
                                     <div className="icon">
-                                        <i className="fas fa-laptop"></i>
+                                        <i className="fas fa-hammer"></i>
                                     </div>
                                     <Link to={"/crearCuentaAdministrador"} className="small-box-footer">
                                         Crear Cuenta <i className="fas fa-arrow-circle-right"></i>
@@ -40,7 +40,7 @@ const IniciarSesion = () => {
                                         <p>&nbsp;</p>
                                     </div>
                                     <div className="icon">
-                                        <i className="fas fa-laptop"></i>
+                                        <i className="fas fa-user"></i>
                                     </div>
                                     <Link to={"/crearCuenta"} className="small-box-footer">
                                         Crear Cuenta <i className="fas fa-arrow-circle-right"></i>

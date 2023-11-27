@@ -21,6 +21,7 @@ import ComprarProductos from './Paginas/proyectoClientes/ComprarProductos';
 import VerProductos from './Paginas/proyectoClientes/VerProductos';
 import VerProductosClientes from './Paginas/proyectoClientes/VerProductosClientes';
 import CrearCuentaAdministrador from './Paginas/auth/crearCuentaAdministrador';
+import VerPedidosCliente from './Paginas/proyectoClientes/verPedidosCliente';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path='/crearCategorias' exact element = {<CrearCategoria/>}/>
           <Route path="/editarCategorias/:idCategoria" exact element={<EditarCategoria/>}/>
           <Route path="/verPedidos" exact element={<VerPedidos/>}/>
+          <Route path="/verPedidosCliente" exact element={<VerPedidosCliente/>}/>
           <Route path="/editarPedidos/:idPedido" exact element={<EditarPedidos/>}/>
           <Route path="/tareas-admin/:idProyecto" exact element={<TareasAdmin/>}/>
           <Route path="/tareas-crear/:idProyecto" exact element={<TareasCrear/>}/>
