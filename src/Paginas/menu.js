@@ -1,16 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../componentes/Navbar";
 import SidebarContainer from "../componentes/SidebarContainer";
 import ContentHeader from "../componentes/ContentHeader";
 import Footer from "../componentes/Footer";
-import { Link } from "react-router-dom";
-import "../css/style.css";
+import APIInvoke from "../utils/APIInvoke";
 
 const Menu = () => {
+  const [tiendas, setProyectos] = useState([]);
+  const userId = localStorage.getItem("id");
+  const userNombre = localStorage.getItem("nombre");
+  const navigate = useNavigate(); // Cambia a useNavigate
+
+  const listItemStyle = {
+    fontSize: "20px",
+    marginBottom: "10px",
+  };
+
+  const cargarTiendas = async () => {
+    try {
+      const response = await APIInvoke.invokeGET(`/Usuarios?id=${userId}&userNombre=${userNombre}`);
+      console.log('Respuesta de la API:', response);
+
+      if (Array.isArray(response) && response.length > 0) {
+        const tiendaPropia = response.find(tienda => tienda.id === userId);
+
+        if (tiendaPropia) {
+          setProyectos([tiendaPropia]);
+        } else {
+          console.error('El usuario no es propietario de ninguna tienda.');
+          // Redirige a una página de acceso denegado o realiza otra acción según tus requisitos
+          navigate('/menu');
+        }
+      } else {
+        console.error('La respuesta de la API no contiene tiendas válidas.');
+      }
+    } catch (error) {
+      console.error('Error al cargar las tiendas:', error);
+    }
+  };
+
+  useEffect(() => {
+    cargarTiendas();
+  }, []);
+
   return (
     <div className="wrapper">
-      <Navbar></Navbar>
-      <SidebarContainer></SidebarContainer>
+      <Navbar />
+      <SidebarContainer />
       <div className="body content-wrapper">
         <ContentHeader
           titulo={"Panel de tienda"}
@@ -24,15 +61,21 @@ const Menu = () => {
               <div className="col-lg-7 col-8">
                 <div className="small-box bg-red">
                   <div className="inner">
-                    <h3>Tiendas</h3>
+                    <h3>Bienvenido</h3>
                     <p>&nbsp;</p>
                   </div>
                   <div className="icon">
                     <i className="fas fa-shopping-bag"></i>
                   </div>
-                  <Link to={"/proyectos-admin"} className="small-box-footer">
-                    Registra tus productos <i className="fas fa-arrow-circle-right"></i>
-                  </Link>
+                  {tiendas.length > 0 &&
+                    tiendas.map((item) => (
+                      <div key={item.id} className="nav-item" style={listItemStyle}>
+                        <Link to={`/tareas-admin/${item.id}@${item.nombre}@${item.direccion}`} className="nav-link">
+                          <i className="nav-icon fas fa-hammer" />
+                          <p>Productos</p>
+                        </Link>
+                      </div>
+                    ))}
                 </div>
               </div>
 
@@ -46,7 +89,7 @@ const Menu = () => {
                     <i className="fas fa-laptop"></i>
                   </div>
                   <Link to={"/visualizarCategorias"} className="small-box-footer">
-                    Crear categoría <i className="fas fa-arrow-circle-right"></i>
+                    Ver Categorías <i className="fas fa-arrow-circle-right"></i>
                   </Link>
                 </div>
               </div>
@@ -62,15 +105,13 @@ const Menu = () => {
                   <Link to={"/verPedidos"} className="small-box-footer">
                     Ver pedidos <i className="fas fa-arrow-circle-right"></i>
                   </Link>
-                
                 </div>
               </div>
-
             </div>
           </div>
         </section>
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

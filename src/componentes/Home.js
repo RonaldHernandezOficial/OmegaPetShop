@@ -1,12 +1,20 @@
-import React from "react";
 import { Link } from "react-router-dom";
-
+import React, { useState, useEffect } from "react";
 
 const Home = () => {
+    const [tiendas, setProyectos] = useState([]);
     const listItemStyle = {
         fontSize: "20px", // Tamaño de fuente más grande
         marginBottom: "10px", // Espacio entre elementos más grande
     };
+
+    useEffect(() => {
+        // Simulando la carga de datos de tiendas
+        const tiendasCargadas = [
+            { id: "", nombre: "Tienda 1", direccion: "Dirección 1" }
+        ];
+        setProyectos(tiendasCargadas);
+    }, []);
     
     return (
         <nav className="mt-2">
@@ -22,22 +30,16 @@ const Home = () => {
                         <p>Inicio</p>
                     </Link>
                 </li>
-
-                <li className="nav-item" style={listItemStyle}>
-                    <Link to={"/proyectos-admin"} className="nav-link">
-                        <i className="nav-icon fas fa-shopping-bag" />
-                        <p>Tiendas</p>
-                    </Link>
-                </li>
-
-                <li className="nav-item" style={listItemStyle}>
-                    <Link to={"#"} className="nav-link">
-                        <i className="nav-icon fas fa-hammer" />
-                        <p>Productos</p>
-                    </Link>
-                </li>
-
-                <li className="nav-item" style={listItemStyle}>
+                {tiendas.length > 0 &&
+    tiendas.map((item) => (
+        <li key={item.id} className="nav-item" style={listItemStyle}>
+            <Link to={`/tareas-admin/${item.id}@${item.nombre}@${item.direccion}`} className="nav-link">
+                <i className="nav-icon fas fa-hammer" />
+                <p>Productos</p>
+            </Link>
+        </li>
+    ))}            
+    <li className="nav-item" style={listItemStyle}>
                     <Link to={"/visualizarCategorias"} className="nav-link">
                         <i className="nav-icon fas fa-laptop" />
                         <p>Categorias</p>

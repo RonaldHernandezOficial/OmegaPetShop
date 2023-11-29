@@ -11,8 +11,6 @@ import { useEffect, useState } from "react";
 const VisualizarCategorias = () => {
     const [ventas, setVentas] = useState([]);
 
-
-
     const cargarCategorias = async () => {
         try {
             var response = await APIInvoke.invokeGET(`/categorias`);
@@ -117,24 +115,21 @@ const VisualizarCategorias = () => {
                         <table className="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th style={{ width: '10%' }}>#</th>
-                                    <th style={{ width: '10%' }}>Nombre</th>
-                                    <th style={{ width: '10%' }}>Opciones</th>
+                                    <th style={{ width: '10%' }}>Ver Categorías</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            {
-                                    ventas.map(item =>
-                                        <tr key={item.id}>
-                                            <td>{item.id}</td>
-                                            <td>{item.nombre}</td>
-                                            <Link to={`/editarCategorias/${item.id}@${item.nombre}`} className="btn btn-sm btn-primary">Editar</Link> &nbsp;&nbsp;
-                                            <button onClick={(e) => eliminarCategoria(e, item.id)} className="btn btn-sm btn-danger">Borrar</button>
-                                            </tr>
-                                    )}
+                            <select class="selectpicker" data-style={"btn-success"} data-live-search="true">
+                                <option data-tokens="ketchup mustard">Alimentos</option>
+                                <option data-tokens="mustard">Accesorios</option>
+                                <option data-tokens="frosting">Estética e higiene</option>
+                                <option data-tokens="ketchup mustard">Medicamentos</option>
+                                <option data-tokens="mustard">Snacks</option>
+                                <option data-tokens="frosting">Paseo</option>
+                                <option data-tokens="frosting">Juguetes</option>
+                                <option data-tokens="frosting">Placas</option>
+                            </select>
                             </tbody>
-
-
                         </table>
                     </div>
                 </div>

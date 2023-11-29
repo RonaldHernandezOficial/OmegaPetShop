@@ -17,7 +17,7 @@ const TareasCrear = () => {
     const [productos, setProductos] = useState({
         nombre: '',
         precio:'',
-        idT:'',
+        idU:'',
         idC:''
     })
 
@@ -27,7 +27,7 @@ const TareasCrear = () => {
 
     const { idProyecto } = useParams();
     let arreglo = idProyecto.split('@')
-    const idTienda = arreglo[0]
+    const idUsuario = arreglo[0]
     const nombreTienda = arreglo[1]
     const tituloPag = `Creación de productos: ${nombreTienda}`
 
@@ -48,7 +48,7 @@ const TareasCrear = () => {
     const crearTarea = async () => {
 
         const data = {
-            idT: idTienda,
+            idT: idUsuario,
             idC:productos.idC,
             nombre: productos.nombre,
             precio:productos.precio
@@ -74,7 +74,7 @@ const TareasCrear = () => {
                 }
             });
         } else {
-            navigate(`/tareas-admin/${idTienda}@${nombreTienda}`)
+            navigate(`/tareas-admin/${idUsuario}@${nombreTienda}`)
             const msg = "La tarea fue creada correctamente";
             new swal({
                 title: 'Información',
@@ -136,7 +136,17 @@ const TareasCrear = () => {
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="idC">Categoría:</label>
-                                        <input type="text" className="form-control" id="idC" name="idC" placeholder="Ingrese la categoría" value={idC} onChange={onChange} required />
+                                        <br/>
+                                        <select className="form-control" id="idC" name="idC"  value={idC} onChange={onChange} required class="selectpicker" data-style={"btn-success"} data-live-search="true">
+                                            <option data-tokens="ketchup mustard">Alimentos</option>
+                                            <option data-tokens="mustard">Accesorios</option>
+                                            <option data-tokens="frosting">Estética e higiene</option>
+                                            <option data-tokens="ketchup mustard">Medicamentos</option>
+                                            <option data-tokens="mustard">Snacks</option>
+                                            <option data-tokens="frosting">Paseo</option>
+                                            <option data-tokens="frosting">Juguetes</option>
+                                            <option data-tokens="frosting">Placas</option>
+                                        </select>
                                     </div>
 
                                 </div>

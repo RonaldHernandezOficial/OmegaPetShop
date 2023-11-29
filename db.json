@@ -44,6 +44,15 @@
       "password": "123456",
       "rol": "cliente",
       "id": 5
+    },
+    {
+      "nombre": "Mondongo",
+      "email": "mondongo@gmail.com",
+      "nit": "9018804980",
+      "telefono": "213138049808",
+      "password": "123456",
+      "rol": "administrador",
+      "id": 6
     }
   ],
   "Categorias": [
@@ -53,12 +62,7 @@
     }
   ],
   "Tiendas": [
-    {
-      "nombre": "Huellitas",
-      "direccion": "cll 142 c # 09 - 45",
-      "tiendaId": "3",
-      "id": 1
-    }
+    {}
   ],
   "Ventas": [
     {
@@ -116,10 +120,39 @@
   "Productos": [
     {
       "idT": "1",
-      "idC": "Comida",
+      "idC": "sexo monda",
       "nombre": "Dog Show",
       "precio": "14000",
+      "estado": false,
       "id": 1
+    },
+    {
+      "idT": "1",
+      "idC": "Snacks",
+      "nombre": "Ronald",
+      "precio": "1000",
+      "id": 2
+    },
+    {
+      "idT": "1",
+      "idC": "Juguetes",
+      "nombre": "Perro Hijueputa",
+      "precio": "9999",
+      "id": 3
+    },
+    {
+      "idT": "2",
+      "idC": "Juguetes",
+      "nombre": "Hola",
+      "precio": "44604056",
+      "id": 4
+    },
+    {
+      "idT": "1",
+      "idC": "Juguetes",
+      "nombre": "Hola",
+      "precio": "44604056",
+      "id": 5
     }
   ]
 }

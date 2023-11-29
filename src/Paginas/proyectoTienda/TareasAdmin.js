@@ -8,155 +8,144 @@ import swal from "sweetalert2";
 import { Link, useParams } from "react-router-dom";
 
 const TareasAdmin = () => {
+  const [productos, setProductos] = useState([]);
+  const userId = localStorage.getItem("id");
 
+  const { idProyecto } = useParams();
+  const { userId: idUser, nombreUsuario } = useParams(); // Cambiado a "idUser" para evitar conflicto
 
-    const [productos, setProductos] = useState([]);
+  const tituloPag = `Listado de productos: ${nombreUsuario || "Usuario Desconocido"}`;
 
-    const { idProyecto } = useParams();
-    let arreglo = idProyecto.split('@')
-    const idTienda = arreglo[0]
-    const nombreTienda = arreglo[1]
-    const tituloPag = `Listado de productos: ${nombreTienda}`
+  const cargarProductos = async () => {
+    try {
+      const response = await APIInvoke.invokeGET(`/productos`);
+      console.log('Respuesta de la API:', response);
 
-    const cargarProductos = async () => {
-        try {
-            var response = await APIInvoke.invokeGET(`/productos?idT=${idTienda}`);
-            console.log('Respuesta de la API:', response); // Verifica la respuesta
-
-            if (Array.isArray(response) && response.length > 0) {
-                setProductos(response);
-            } else {
-                console.error('La respuesta de la API no contiene proyectos.');
-            }
-        } catch (error) {
-            console.error('Error al cargar los proyectos:', error);
-        }
-    };
-
-    useEffect(() => {
-        cargarProductos();
-    }, []);
-
-    const eliminarProducto = async (e, idProducto, idTienda) => { 
-        e.preventDefault();
-        const verificarExistenciaTarea = async (idProducto) => {
-            try {
-                const response = await APIInvoke.invokeGET(
-                    `/productos?id=${idProducto}`
-                );
-                if (response && response.length > 0) {
-                    return true; 
-                }
-                return false; 
-            } catch (error) {
-                console.error(error);
-                return false;
-            }
-        };
-
-        const productoExistente = await verificarExistenciaTarea(idProducto);
-
-        if (productoExistente) {
-            const response = await APIInvoke.invokeDELETE(`/productos/${idProducto}?idT=${idTienda}`);
-            const msg = "Producto Eliminado Correctamente";
-            new swal({
-                title: "Informacion",
-                text: msg,
-                icon: "success",
-                buttons: {
-                    confirmar: {
-                        text: "Ok",
-                        value: true,
-                        visible: true,
-                        className: "btn btn-prymari",
-                        closeModal: true,
-                    },
-                },
-            });
-            cargarProductos();
-        } else {
-            const msg = "El producto No Pudo Ser Eliminado";
-            new swal({
-                title: "Error",
-                text: msg,
-                icon: "error",
-                buttons: {
-                    confirmar: {
-                        text: "Ok",
-                        value: true,
-                        visible: true,
-                        className: "btn btn-danger",
-                        closeModal: true,
-                    },
-                },
-            });
-        }
+      if (Array.isArray(response) && response.length > 0) {
+        // Filtra los productos para mostrar solo los del usuario actual
+        const productosUsuario = response.filter(item => item.userId === idUser);
+        setProductos(productosUsuario);
+      } else {
+        console.error('La respuesta de la API no contiene productos válidos.');
+      }
+    } catch (error) {
+      console.error('Error al cargar los productos:', error);
     }
+  };
 
-    return (
-        <div className="wrapper">
-            <Navbar></Navbar>
-            <SidebarContainer></SidebarContainer>
-            <div className="content-wrapper">
+  const verificarExistenciaTarea = async (idProducto) => {
+    try {
+      const response = await APIInvoke.invokeGET(`/productos?id=${idProducto}&userId=${userId}&userNombre=${nombreUsuario}`);
+      if (response && response.length > 0) {
+        return true;
+      }
+      return false;
+    } catch (error) {
+      console.error('Error al verificar la existencia de la tarea:', error);
+      return false;
+    }
+  };
 
-                <ContentHeader
-                    titulo={tituloPag}
-                    breadCrumb1={" Listado de proyectos"}
-                    breadCrumb2={"Tareas"}
-                    ruta1={"/proyectos-admin"}
-                />
-                <section className="content">
-                    <div className="card">
-                        <div className="card-header">
-                            <h3 className="card-title"><Link to={`/tareas-crear/${idTienda}@${nombreTienda}`} className="btn btn-block btn-primary btn-sm">crear producto</Link></h3>
-                            <div className="card-tools">
-                                <button type="button" className="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                    <i className="fas fa-minus" />
-                                </button>
-                                <button type="button" className="btn btn-tool" data-card-widget="remove" title="Remove">
-                                    <i className="fas fa-times" />
-                                </button>
-                            </div>
-                        </div>
-                        <div className="card-body">
-                            <table className="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th style={{ width: '15%' }}>#</th>
-                                        <th style={{ width: '10%' }}>Nombre</th>
-                                        <th style={{ width: '10%' }}>Precio</th>
-                                        <th style={{ width: '10%' }}>Tienda</th>
-                                        <th style={{ width: '10%' }}>Categoria</th>
-                                        <th style={{ width: '15%' }}>Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        productos.map(item =>
-                                            <tr key={item.id}>
-                                                <td>{item.id}</td>
-                                                <td>{item.nombre}</td>
-                                                <td>{item.precio}</td>
-                                                <td>{nombreTienda}</td>
-                                                <td>{item.idC}</td>
-                                                <td>
-                                                    <Link to={`/tareas-editar/${item.id}@${item.nombre}@${item.precio}@${item.idT}@${item.idC}@${nombreTienda}`} className="btn btn-sm btn-primary">Editar</Link> &nbsp;&nbsp;
-                                                    <button onClick={(e) => eliminarProducto(e, item.id, item.idT)} className="btn btn-sm btn-danger">Borrar</button>
-                                                </td>
-                                            </tr>
-                                        )}
-                                </tbody>
+  const eliminarProducto = async (e, idProducto) => {
+    e.preventDefault();
+    try {
+      const productoExistente = await verificarExistenciaTarea(idProducto);
 
+      if (productoExistente) {
+        const response = await APIInvoke.invokeDELETE(`/productos/${idProducto}`);
 
-                            </table>
-                        </div>
-                    </div>
+        if (response) {
+          const msg = "Producto Eliminado Correctamente";
+          swal.fire({
+            title: "Informacion",
+            text: msg,
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          cargarProductos();
+        } else {
+          throw new Error("Error al eliminar el producto.");
+        }
+      } else {
+        throw new Error("El producto no pudo ser encontrado o no tienes permisos.");
+      }
+    } catch (error) {
+      console.error('Error al eliminar el producto:', error);
+      const msg = "El producto no pudo ser eliminado";
+      swal.fire({
+        title: "Error",
+        text: msg,
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
+    }
+  };
 
-                </section>
+  useEffect(() => {
+    cargarProductos();
+  }, [idUser, nombreUsuario]);
+
+  return (
+    <div className="wrapper">
+      <Navbar />
+      <SidebarContainer />
+      <div className="content-wrapper">
+        <ContentHeader
+          titulo={tituloPag}
+          breadCrumb1={"Listado de proyectos"}
+          breadCrumb2={"Tareas"}
+          ruta1={"/proyectos-admin"}
+        />
+        <section className="content">
+          <div className="card">
+            <div className="card-header">
+              <h3 className="card-title">
+                <Link to={`/tareas-crear/${idUser}@${nombreUsuario}`} className="btn btn-block btn-primary btn-sm">Crear producto</Link>
+              </h3>
+              <div className="card-tools">
+                <button type="button" className="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i className="fas fa-minus" />
+                </button>
+                <button type="button" className="btn btn-tool" data-card-widget="remove" title="Remove">
+                  <i className="fas fa-times" />
+                </button>
+              </div>
             </div>
-            <Footer></Footer>
-        </div>
-    );
-}
+            <div className="card-body">
+              <table className="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style={{ width: '15%' }}>#</th>
+                    <th style={{ width: '10%' }}>Nombre</th>
+                    <th style={{ width: '10%' }}>Precio</th>
+                    <th style={{ width: '10%' }}>Tienda</th>
+                    <th style={{ width: '10%' }}>Categoria</th>
+                    <th style={{ width: '15%' }}>Opciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {productos.map(item => (
+                    <tr key={item.id}>
+                      <td>{item.id}</td>
+                      <td>{item.nombre}</td>
+                      <td>{item.precio}</td>
+                      <td>{nombreUsuario}</td>
+                      <td>{item.idC}</td>
+                      <td>
+                        <Link to={`/tareas-editar/${item.id}@${item.nombre}@${item.precio}@${item.idT}@${item.idC}@${nombreUsuario}`} className="btn btn-sm btn-primary">Editar</Link> &nbsp;&nbsp;
+                        <button onClick={(e) => eliminarProducto(e, item.id)} className="btn btn-sm btn-danger">Borrar</button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
 export default TareasAdmin;

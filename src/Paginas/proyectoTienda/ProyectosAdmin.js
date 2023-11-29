@@ -131,7 +131,6 @@ const ProyectosAdmin = () => {
                                                 <td>{item.nombre}</td>
                                                 <td>{item.direccion}</td>
                                                 <td>
-                                                    <Link to={`/tareas-admin/${item.id}@${item.nombre}@${item.direccion}`} className="btn btn-sm btn-info">Productos</Link> &nbsp;&nbsp;
                                                     <Link to={`/proyectos-editar/${item.id}@${item.nombre}@${item.direccion}`} className="btn btn-sm btn-primary">Editar</Link> &nbsp;&nbsp;
                                                     <button onClick={(e) => eliminarTienda(e, item.id)} className="btn btn-sm btn-danger">Borrar</button>
                                                 </td>
