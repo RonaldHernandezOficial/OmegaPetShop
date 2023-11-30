@@ -55,12 +55,7 @@
       "id": 6
     }
   ],
-  "Categorias": [
-    {
-      "nombre": "Comida",
-      "id": 1
-    }
-  ],
+  "Categorias": [],
   "Tiendas": [
     {}
   ],
@@ -115,44 +110,41 @@
       "telefono": "3215421521",
       "userId": "5",
       "id": 6
+    },
+    {
+      "idP": "10",
+      "nombreProd": "gdjh",
+      "nombre": "agsdsh",
+      "direccion": "faffsfsfsfs",
+      "telefono": "421421421421",
+      "userId": "2",
+      "id": 7
     }
   ],
   "Productos": [
     {
-      "idT": "1",
-      "idC": "sexo monda",
-      "nombre": "Dog Show",
-      "precio": "14000",
-      "estado": false,
+      "idU": "1",
+      "idC": "Estética e higiene",
+      "nombre": "214214221",
+      "precio": "4214214",
+      "nombreU": "Ronald",
       "id": 1
     },
     {
-      "idT": "1",
-      "idC": "Snacks",
-      "nombre": "Ronald",
-      "precio": "1000",
+      "idU": "1",
+      "nombreU": "Ronald",
+      "idC": "Estética e higiene",
+      "nombre": "fsafsafsasaffsa",
+      "precio": "21",
       "id": 2
     },
     {
-      "idT": "1",
-      "idC": "Juguetes",
-      "nombre": "Perro Hijueputa",
-      "precio": "9999",
+      "idU": "6",
+      "idC": "Medicamentos",
+      "nombre": "4421421421",
+      "precio": "2",
+      "nombreU": "Mondongo",
       "id": 3
-    },
-    {
-      "idT": "2",
-      "idC": "Juguetes",
-      "nombre": "Hola",
-      "precio": "44604056",
-      "id": 4
-    },
-    {
-      "idT": "1",
-      "idC": "Juguetes",
-      "nombre": "Hola",
-      "precio": "44604056",
-      "id": 5
     }
   ]
 }

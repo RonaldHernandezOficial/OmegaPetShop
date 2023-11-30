@@ -159,7 +159,7 @@ const CrearCuentaAdministrador = () => {
                 <input
                     type="text"
                     className="form-control"
-                    placeholder="Nombre"
+                    placeholder="Ingresa el nombre de la tienda"
                     id="nombre"
                     name="nombre"
                     value={nombre}

@@ -72,9 +72,11 @@ const Login = () => {
 
             // Contener el token de acceso
             const jwt = usuarioExistente.id;
+            const jwn = usuarioExistente.nombre;
 
             // Guardar el token en el local storage
             localStorage.setItem('id', jwt);
+            localStorage.setItem('nombre', jwn);
 
             if (!usuarioExistente) {
                 const msg = "No fue posible iniciar sesión, verifique los datos ingresados.";

@@ -59,10 +59,10 @@ const Menu = () => {
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-7 col-8">
-                <div className="small-box bg-red">
+                <div className="small-box bg-blue">
                   <div className="inner">
                     <h3>Bienvenido</h3>
-                    <p>&nbsp;</p>
+                    <p>Ingresa tus productos</p>
                   </div>
                   <div className="icon">
                     <i className="fas fa-shopping-bag"></i>

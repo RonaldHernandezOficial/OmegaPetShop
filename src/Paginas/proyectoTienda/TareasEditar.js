@@ -11,7 +11,8 @@ import swal from "sweetalert2";
 
 const TareasEditar = () => {
 
-
+    const userId = localStorage.getItem("id");
+    const nombreUser = localStorage.getItem("nombre");
     const navigate = useNavigate();
 
     const { idProyecto } = useParams();
@@ -19,16 +20,17 @@ const TareasEditar = () => {
     const idProducto= arreglo[0]
     const nombreProducto = arreglo[1]
     const precioProducto = arreglo[2]
-    const idTienda = arreglo[3]
+    const idUser = arreglo[3]
     const idCategoria= arreglo[4]
-    const nombreTienda= arreglo[5]
-    const tituloPag = `Actualización de productos: ${nombreTienda}`
+    const nombreUse= arreglo[5] 
+    const tituloPag = `Actualización de productos: ${nombreUser}`
 
 
     const [productos, setproductos] = useState({
         nombre: nombreProducto,
         precio:precioProducto,
-        idT:idTienda,
+        idU:idUser,
+        nomU: nombreUse,
         idC:idCategoria
     })
 
@@ -52,11 +54,11 @@ const TareasEditar = () => {
 
 
         const data = {
-            idT: idTienda,
+            idU: userId,
             idC:productos.idC,
             nombre: productos.nombre,
             precio:productos.precio,
-            estado: false
+            nombreU: nombreUser
         }
 
         console.log(data)
@@ -64,7 +66,7 @@ const TareasEditar = () => {
         const idTareaEditado = response.id;
 
         if (idTareaEditado !== idProducto) {
-            navigate(`/tareas-admin/${idTienda}@${nombreTienda}`)
+            navigate(`/tareas-admin/${userId}@${nombreUser}`)
             const msg = "La tarea fue editada correctamente";
             new swal({
                 title: 'Información',
@@ -117,7 +119,7 @@ const TareasEditar = () => {
                     titulo={tituloPag}
                     breadCrumb1={"Listado de tareas"}
                     breadCrumb2={"Actualizar"}
-                    ruta1={`/tareas-admin/${idTienda}@${nombreTienda}`}
+                    ruta1={`/tareas-admin/${userId}@${nombreUser}`}
                 />
                 <section className="content">
                     <div className="card">
@@ -143,8 +145,18 @@ const TareasEditar = () => {
                                         <input type="text" className="form-control" id="precio" name="precio" placeholder="Ingrese el precio del producto" value={precio} onChange={onChange} required />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="categoria">Categoria:</label>
-                                        <input type="text" className="form-control" id="categoria" name="idC" placeholder="Ingrese el nombre de la categoría" value={idC} onChange={onChange} required />
+                                        <label htmlFor="idC">Categoría:</label>
+                                        <br/>
+                                        <select className="form-control" id="idC" name="idC"  value={idC} onChange={onChange} required class="selectpicker" data-style={"btn-success"} data-live-search="true">
+                                            <option data-tokens="ketchup mustard">Alimentos</option>
+                                            <option data-tokens="mustard">Accesorios</option>
+                                            <option data-tokens="frosting">Estética e higiene</option>
+                                            <option data-tokens="ketchup mustard">Medicamentos</option>
+                                            <option data-tokens="mustard">Snacks</option>
+                                            <option data-tokens="frosting">Paseo</option>
+                                            <option data-tokens="frosting">Juguetes</option>
+                                            <option data-tokens="frosting">Placas</option>
+                                        </select>
                                     </div>
 
                                 </div>

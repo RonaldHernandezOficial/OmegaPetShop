@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 
 const Home = () => {
     const [tiendas, setProyectos] = useState([]);
+    const userId = localStorage.getItem("id");
+    const userNombre = localStorage.getItem("nombre");
     const listItemStyle = {
         fontSize: "20px", // Tamaño de fuente más grande
         marginBottom: "10px", // Espacio entre elementos más grande
@@ -11,7 +13,7 @@ const Home = () => {
     useEffect(() => {
         // Simulando la carga de datos de tiendas
         const tiendasCargadas = [
-            { id: "", nombre: "Tienda 1", direccion: "Dirección 1" }
+            { id: userId, nombre: userNombre}
         ];
         setProyectos(tiendasCargadas);
     }, []);

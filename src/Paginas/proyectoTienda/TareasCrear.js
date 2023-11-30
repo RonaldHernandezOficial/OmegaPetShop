@@ -12,12 +12,16 @@ import swal from "sweetalert2";
 
 const TareasCrear = () => {
 
+    const userId = localStorage.getItem("id");
+    const nombreUser = localStorage.getItem("nombre");
+
     const navigate = useNavigate();
 
     const [productos, setProductos] = useState({
         nombre: '',
         precio:'',
         idU:'',
+        nombreU:'',
         idC:''
     })
 
@@ -28,8 +32,8 @@ const TareasCrear = () => {
     const { idProyecto } = useParams();
     let arreglo = idProyecto.split('@')
     const idUsuario = arreglo[0]
-    const nombreTienda = arreglo[1]
-    const tituloPag = `Creación de productos: ${nombreTienda}`
+    const nombreUsers = arreglo[1]
+    const tituloPag = `Creación de productos: ${nombreUsers}`
 
 
     useEffect(() => {
@@ -48,7 +52,8 @@ const TareasCrear = () => {
     const crearTarea = async () => {
 
         const data = {
-            idT: idUsuario,
+            idU: userId,
+            nombreU: nombreUser,
             idC:productos.idC,
             nombre: productos.nombre,
             precio:productos.precio
@@ -74,7 +79,7 @@ const TareasCrear = () => {
                 }
             });
         } else {
-            navigate(`/tareas-admin/${idUsuario}@${nombreTienda}`)
+            navigate(`/tareas-admin/${idUsuario}@${nombreUser}`)
             const msg = "La tarea fue creada correctamente";
             new swal({
                 title: 'Información',
@@ -126,6 +131,10 @@ const TareasCrear = () => {
                         <div className="card-body">
                             <form onSubmit={onSubmit} noValidate>
                                 <div className="card-body">
+                                <div className="form-group">
+                                        <label htmlFor="nombre">Nombre Tienda:</label>
+                                        <input type="text" className="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre de la tienda" value={nombreUser} onChange={onChange} required />
+                                    </div>
                                 <div className="form-group">
                                         <label htmlFor="nombre">Nombre:</label>
                                         <input type="text" className="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del producto" value={nombre} onChange={onChange} required />
