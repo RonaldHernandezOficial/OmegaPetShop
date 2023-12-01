@@ -6,11 +6,12 @@ import { Link } from "react-router-dom";
 
 const IniciarSesion = () => {
     return (
+        <div style={{ textAlign: 'center' }}>
         <div className="wrapper">
             <center>
             <div className="content-wrapper">
                 <ContentHeader
-                    titulo={"¿Como vas a iniciar sesión?"}
+                    titulo={"Bienvenido a OmegaPetShop"}
                     breadCrumb1={"Login"}
                     breadCrumb2={"Crear Cuenta"}
                     ruta1={"/login"}
@@ -19,6 +20,7 @@ const IniciarSesion = () => {
                     <div className="container-fluid">
                         <div className="row">
                             <div className="col-lg-7 col-8">
+                            <h2>¿Como vas a iniciar sesión?</h2>
                                 <div className="small-box bg-red">
                                     <div className="inner">
                                         <h3>Administrador</h3>
@@ -48,11 +50,20 @@ const IniciarSesion = () => {
                                 </div>
                             </div>
                         </div>
+                        <div>
+                        <img src="https://media.tenor.com/ZJT4S4lpfpIAAAAd/perro-bailando.gif"
+                        alt="GIF"
+                        width="300" // Puedes ajustar el ancho según tus necesidades
+                        height="200" // Puedes ajustar la altura según tus necesidades
+                        style={{ float: 'left' }} // Agrega esta línea para alinear a la izquierda
+                        /> 
+                        </div>
                     </div>
                 </section>
             </div>      
             </center>
             <Footer></Footer>
+        </div>
         </div>
     );
 };

@@ -28,28 +28,28 @@ function App() {
     <Fragment>
       <Router>
         <Routes>
-          <Route path='/' exact element = {<IniciarSesion/>}/>
-          <Route path='/login' exact element = {<Login/>}/>
-          <Route path='/menu' exact element = {<Menu/>}/>
-          <Route path='/menuClientes' exact element = {<MenuClientes/>}/>
-          <Route path='/crearCuenta' exact element = {<CrearCuenta/>}/>
-          <Route path='/crearCuentaAdministrador' exact element = {<CrearCuentaAdministrador/>}/>
-          <Route path='/proyectos-admin' exact element = {<ProyectosAdmin/>}/>
-          <Route path='/proyectos-crear' exact element = {<ProyectosCrear/>}/>
-          <Route path='/VerTiendas' exact element = {<VerTiendasClientes/>}/>
-          <Route path='/proyectos-editar/:idTienda' exact element = {<ProyectosEditar/>}/>
-          <Route path='/visualizarCategorias' exact element = {<VisualizarCategorias/>}/>
-          <Route path='/crearCategorias' exact element = {<CrearCategoria/>}/>
-          <Route path="/editarCategorias/:idCategoria" exact element={<EditarCategoria/>}/>
-          <Route path="/verPedidos" exact element={<VerPedidos/>}/>
-          <Route path="/verPedidosCliente" exact element={<VerPedidosCliente/>}/>
-          <Route path="/editarPedidos/:idPedido" exact element={<EditarPedidos/>}/>
-          <Route path="/tareas-admin/:idProyecto" exact element={<TareasAdmin/>}/>
-          <Route path="/tareas-crear/:idProyecto" exact element={<TareasCrear/>}/>
-          <Route path="/tareas-editar/:idProyecto" exact element={<TareasEditar/>}/>
-          <Route path="/comprarProductos/:idVenta" exact element={<ComprarProductos/>}/>
-          <Route path="/verProductos" exact element={<VerProductos/>}/>
-          <Route path="/productosClientes/:idProyecto" exact element={<VerProductosClientes/>}/>
+          <Route path='/'  element = {<IniciarSesion/>}/>
+          <Route path='/login'  element = {<Login/>}/>
+          <Route path='/menu'  element = {<Menu/>}/>
+          <Route path='/menuClientes'  element = {<MenuClientes/>}/>
+          <Route path='/crearCuenta'  element = {<CrearCuenta/>}/>
+          <Route path='/crearCuentaAdministrador'  element = {<CrearCuentaAdministrador/>}/>
+          <Route path='/proyectos-admin'  element = {<ProyectosAdmin/>}/>
+          <Route path='/proyectos-crear'  element = {<ProyectosCrear/>}/>
+          <Route path='/VerTiendas'  element = {<VerTiendasClientes/>}/>
+          <Route path='/proyectos-editar/:idTienda'  element = {<ProyectosEditar/>}/>
+          <Route path='/visualizarCategorias'  element = {<VisualizarCategorias/>}/>
+          <Route path='/crearCategorias'  element = {<CrearCategoria/>}/>
+          <Route path="/editarCategorias/:idCategoria"  element={<EditarCategoria/>}/>
+          <Route path="/verPedidos"  element={<VerPedidos/>}/>
+          <Route path="/verPedidosCliente"  element={<VerPedidosCliente/>}/>
+          <Route path="/editarPedidos/:idPedido"  element={<EditarPedidos/>}/>
+          <Route path="/tareas-admin/:idProyecto"  element={<TareasAdmin/>}/>
+          <Route path="/tareas-crear/:idProyecto"  element={<TareasCrear/>}/>
+          <Route path="/tareas-editar/:idProyecto"  element={<TareasEditar/>}/>
+          <Route path="/comprarProductos/:idVenta"  element={<ComprarProductos/>}/>
+          <Route path="/verProductos"  element={<VerProductos/>}/>
+          <Route path="/productosClientes/:idProyecto"  element={<VerProductosClientes/>}/>
         </Routes>
       </Router>
     </Fragment>

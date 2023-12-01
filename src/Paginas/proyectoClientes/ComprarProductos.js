@@ -9,31 +9,29 @@ import APIInvoke from "../../utils/APIInvoke";
 import swal from "sweetalert2";
 
 
-
-
 const ComprarProductos = () => {
+    const userId = localStorage.getItem("id");
 
-const navigate = useNavigate();
+    const nombreUser = localStorage.getItem("nombre");
+    const navigate = useNavigate();
 
-const { idVenta } = useParams();
-let arreglo = idVenta.split('@')
-const idProducto= arreglo[0]
-const nombreProducto = arreglo[1]
-const idTienda = arreglo[2]
-const nombreTienda = arreglo[3]
+    const { idVenta } = useParams();
+    let arreglo = idVenta.split('@')
+    const idProducto= arreglo[0]
+    const nombreProducto = arreglo[1]
+    const idU = arreglo[2]
+    const nombreProd = arreglo[3]
 
-const tituloPag = `Compra tus productos`
+    const tituloPag = `Compra tus productos: ${nombreUser}`
 
-const userId = localStorage.getItem("id");
 
-const [venta, setVentas] = useState({
-    idP: idProducto,
-    nombreProd:nombreProducto,
-    nombre:'',
-    direccion:'',
-    telefono:''
-})
-
+    const [venta, setVentas] = useState({
+        idP: idProducto,
+        nombreProd: nombreProducto,
+        nombre: '',
+        direccion: '',
+        telefono: ''
+    });
 const { nombre, direccion, telefono } = venta;
 
 useEffect(() => {
@@ -57,6 +55,7 @@ const realizarVenta = async () => {
         nombre:venta.nombre,
         direccion:venta.direccion,
         telefono:venta.telefono,
+        nomreUser: nombreUser,
         userId: userId // Agrega el ID de usuario al ticket
     }
 
@@ -100,7 +99,7 @@ const realizarVenta = async () => {
 
     setVentas({
         idP: idProducto,
-        nombreProd:nombreProducto,
+        nombreProd:nombre,
         nombre:'',
         direccion:'',
         telefono:''

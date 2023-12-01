@@ -101,7 +101,7 @@ const VisualizarCategorias = () => {
             <section className="content">
                 <div className="card">
                     <div className="card-header">
-                    <h3 className="card-title"><Link to={"/crearCategorias"} className="btn btn-block btn-primary btn-sm">Registrar categoría</Link></h3>
+                    
                         <div className="card-tools">
                             <button type="button" className="btn btn-tool" data-card-widget="collapse" title="Collapse">
                                 <i className="fas fa-minus" />

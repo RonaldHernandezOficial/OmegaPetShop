@@ -13,21 +13,17 @@ const TareasAdmin = () => {
   const nombreUser = localStorage.getItem("nombre");
 
   const { idProyecto } = useParams();
-  const { userId: idUser, nombreUser: nombreUsuario } = useParams(); // Cambiado a "idUser" para evitar conflicto
+  const { userId: idUser, nombreUser: nombreU } = useParams(); // Cambiado a "idUser" para evitar conflicto
 
   const tituloPag = `Listado de productos: ${nombreUser || "Usuario Desconocido"}`;
 
   const cargarProductos = async () => {
     try {
-      const response = await APIInvoke.invokeGET(`/productos?userId=${userId}`);
+      const response = await APIInvoke.invokeGET(`/productos?idU=${userId}`);
       console.log('Respuesta de la API:', response);
 
       if (Array.isArray(response) && response.length > 0) {
-        // Filtra los productos para mostrar solo los del usuario actual
-        const productosUsuario = response.filter(item => item.userId === idUser);
-        const productosUsuarioN = response.filter(item => item.nombreUser === nombreUsuario);
-        setProductos(productosUsuario);
-        setProductos(productosUsuarioN);
+        setProductos(response);
       } else {
         console.error('La respuesta de la API no contiene productos válidos.');
       }
@@ -36,16 +32,14 @@ const TareasAdmin = () => {
     }
   };
 
-  const verificarExistenciaTarea = async (idProducto) => {
+  const verificarExistenciaTarea = async (idProducto, userId) => {
     try {
-      const response = await APIInvoke.invokeGET(`/productos?id=${idProducto}&userId=${userId}`);
-      if (response && response.length > 0) {
-        return true;
+      var response = await APIInvoke.invokeGET(`/productos?id=${idProducto}&userId=${userId}`);
+      if (Array.isArray(response) && response.length > 0) {
+        setProductos(response)
       }
-      return false;
     } catch (error) {
       console.error('Error al verificar la existencia de la tarea:', error);
-      return false;
     }
   };
 
@@ -86,7 +80,7 @@ const TareasAdmin = () => {
 
   useEffect(() => {
     cargarProductos();
-  }, [idUser, nombreUser]);
+  }, [userId, nombreU]);
 
   return (
     <div className="wrapper">
@@ -103,7 +97,7 @@ const TareasAdmin = () => {
           <div className="card">
             <div className="card-header">
               <h3 className="card-title">
-                <Link to={`/tareas-crear/${idUser}@${nombreUser}`} className="btn btn-block btn-primary btn-sm">Crear producto</Link>
+                <Link to={`/tareas-crear/${userId}@${nombreUser}`} className="btn btn-block btn-primary btn-sm">Crear producto</Link>
               </h3>
               <div className="card-tools">
                 <button type="button" className="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -137,7 +131,7 @@ const TareasAdmin = () => {
                       <td>{item.nombreU}</td>
                       <td>{item.idC}</td>
                       <td>
-                        <Link to={`/tareas-editar/${item.id}@${item.nombre}@${item.precio}@${item.idU}@${item.idC}@${nombreUsuario}`} className="btn btn-sm btn-primary">Editar</Link> &nbsp;&nbsp;
+                        <Link to={`/tareas-editar/${item.id}@${item.nombre}@${item.precio}@${item.idU}@${item.idC}@${nombreU}`} className="btn btn-sm btn-primary">Editar</Link> &nbsp;&nbsp;
                         <button onClick={(e) => eliminarProducto(e, item.id)} className="btn btn-sm btn-danger">Borrar</button>
                       </td>
                     </tr>

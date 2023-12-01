@@ -1,58 +1,31 @@
 {
   "Usuarios": [
     {
-      "nombre": "Ronald",
-      "email": "ronald@administrador.com",
-      "nit": "948981581158",
-      "telefono": "5891189189",
+      "nombre": "Huellitas",
+      "email": "huellitas@administrador.com",
+      "nit": "907411705",
+      "telefono": "3224568791",
       "password": "123456",
       "rol": "administrador",
       "id": 1
     },
     {
-      "nombre": "Mario",
-      "email": "mario@live.com",
-      "nit": "984084048",
-      "telefono": "32120584089",
+      "nombre": "Maria",
+      "email": "maria@gmail.com",
+      "direccion": "cll 158 c 200 a 546",
+      "telefono": "3224568791",
       "password": "123456",
       "rol": "cliente",
       "id": 2
     },
     {
-      "nombre": "Narly",
-      "email": "narly@administrador.com",
-      "nit": "9017654438",
-      "telefono": "3225125623",
+      "nombre": "Patitas",
+      "email": "patitas@administrador.com",
+      "nit": "907411705",
+      "telefono": "3224568791",
       "password": "123456",
       "rol": "administrador",
       "id": 3
-    },
-    {
-      "nombre": "Ronald",
-      "email": "ronald@cliente.com",
-      "nit": "908742189821",
-      "telefono": "3214705892",
-      "password": "123456",
-      "rol": "cliente",
-      "id": 4
-    },
-    {
-      "nombre": "Mario Hernandez",
-      "email": "mario@gmail.com",
-      "nit": "53296705325375039832",
-      "telefono": "876532985032",
-      "password": "123456",
-      "rol": "cliente",
-      "id": 5
-    },
-    {
-      "nombre": "Mondongo",
-      "email": "mondongo@gmail.com",
-      "nit": "9018804980",
-      "telefono": "213138049808",
-      "password": "123456",
-      "rol": "administrador",
-      "id": 6
     }
   ],
   "Categorias": [],
@@ -61,90 +34,42 @@
   ],
   "Ventas": [
     {
-      "idP": "1",
-      "nombreProd": "Huellitas",
-      "nombre": "Ronald ",
-      "direccion": "",
-      "telefono": "",
+      "idP": "3",
+      "nombreProd": "Patitas",
+      "nombre": "Maria",
+      "direccion": "cll 158 c 200 a 546124",
+      "telefono": "3224568791",
+      "nomreUser": "Maria",
+      "userId": "2",
       "id": 1
     },
     {
       "idP": "1",
       "nombreProd": "Huellitas",
-      "nombre": "Ronald Hernandez",
-      "direccion": "cll 142 c # 53 a 05",
-      "telefono": "3214705892",
-      "id": 2
-    },
-    {
-      "idP": "1",
-      "nombreProd": "Huellitas",
-      "nombre": "Jhoan Fonseca",
-      "direccion": "fdhsgdshgd",
-      "telefono": "21|4215321521",
-      "id": 3
-    },
-    {
-      "idP": "1",
-      "nombreProd": "Huellitas",
-      "nombre": "Jhoan Fonseca",
-      "direccion": "wagsgsa",
-      "telefono": "gsggsagsaga",
-      "userId": "4",
-      "id": 4
-    },
-    {
-      "idP": "1",
-      "nombreProd": "Huellitas",
-      "nombre": "Mario",
-      "direccion": "cll 142 c # 53334 a 05",
-      "telefono": "123456",
-      "userId": "5",
-      "id": 5
-    },
-    {
-      "idP": "1",
-      "nombreProd": "Huellitas",
-      "nombre": "Mario",
-      "direccion": "cll 142 c # 53334 a 05",
-      "telefono": "3215421521",
-      "userId": "5",
-      "id": 6
-    },
-    {
-      "idP": "10",
-      "nombreProd": "gdjh",
-      "nombre": "agsdsh",
-      "direccion": "faffsfsfsfs",
-      "telefono": "421421421421",
+      "nombre": "Maria",
+      "direccion": "cll 158 c 200 a 546124",
+      "telefono": "3224568791",
+      "nomreUser": "Maria",
       "userId": "2",
-      "id": 7
+      "id": 2
     }
   ],
   "Productos": [
     {
       "idU": "1",
-      "idC": "Estética e higiene",
-      "nombre": "214214221",
-      "precio": "4214214",
-      "nombreU": "Ronald",
+      "idC": "Snacks",
+      "nombre": "Mondongo",
+      "precio": "5000",
+      "nombreU": "Huellitas",
       "id": 1
     },
     {
-      "idU": "1",
-      "nombreU": "Ronald",
-      "idC": "Estética e higiene",
-      "nombre": "fsafsafsasaffsa",
-      "precio": "21",
+      "idU": "3",
+      "idC": "Juguetes",
+      "nombre": "Arroz",
+      "precio": "40000",
+      "nombreU": "Patitas",
       "id": 2
-    },
-    {
-      "idU": "6",
-      "idC": "Medicamentos",
-      "nombre": "4421421421",
-      "precio": "2",
-      "nombreU": "Mondongo",
-      "id": 3
     }
   ]
 }

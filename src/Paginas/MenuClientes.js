@@ -7,13 +7,18 @@ import Footer from "../componentes/Footer";
 import SidebarContainerClientes from "../componentes/SidebarContainerClientes";
 
 const MenuClientes = () => {
+
+    const nombreUser = localStorage.getItem("nombre");
+
+    const tituloPag = `Bienvenido ${nombreUser}!`
+
     return (
     <div className="wrapper">
         <Navbar></Navbar>
         <SidebarContainerClientes></SidebarContainerClientes>
         <div className="content-wrapper">
         <ContentHeader
-            titulo={"Panel para Clientes"}
+            titulo={tituloPag}
             breadCrumb1={"Inicio"}
             breadCrumb2={"Panel para Clientes"}
             ruta1={"/menuClientes"}

@@ -12,17 +12,11 @@ const VerTiendas = () => {
     const userId = localStorage.getItem("id");
     const nombreUser = localStorage.getItem("nombre");
 
-    const { userId: idUser, nombreUser: nombreUsuario } = useParams(); // Cambiado a "idUser" para evitar conflicto
-
     useEffect(() => {
     const cargarTiendas = async () => {
         try {
-        const response = await APIInvoke.invokeGET(`/Productos?userId=${userId}&nombreUser=${nombreUser}`);
+        const response = await APIInvoke.invokeGET(`/Productos?userId=${userId}`);
         // Filtra los productos para mostrar solo los del usuario actual
-        const productosUsuario = response.filter(item => item.userId === idUser);
-        const productosUsuarioN = response.filter(item => item.nombreUser === nombreUsuario);
-        setTiendas(productosUsuario);
-        setTiendas(productosUsuarioN);
         console.log("Respuesta de la API:", response);
 
         if (Array.isArray(response) && response.length > 0) {
@@ -55,17 +49,17 @@ const VerTiendas = () => {
             <tr>
             <th>#</th>
             <th>Nombre</th>
-            <th>Opciones</th>
-            <th>Comprar</th>
+            <th>Ver Productos</th>
+            <th>Comprar Productos</th>
             </tr>
         </thead>
         <tbody>
-            {tiendas.map((tienda) => (
-            <tr key={tienda.id}>
-                <td>{tienda.id}</td>
-                <td>{tienda.nombreU}</td>
-                <td> <Link to={`/productosClientes/${tienda.id}@${tienda.nombre}`} className="btn tbn-sm btn-danger">Ver productos</Link></td>
-                <td> <Link to={`/comprarProductos/${tienda.id}@${tienda.nombre}`} className="btn btn-sm btn-primary">Comprar productos</Link></td>
+            {tiendas.map((tiendaU) => (
+            <tr key={tiendaU.id}>
+                <td>{tiendaU.idU}</td>
+                <td>{tiendaU.nombreU}</td>
+                <td> <Link to={`/productosClientes/${tiendaU.idU}@${tiendaU.nombreU}`} className="btn tbn-sm btn-danger">Ver productos</Link></td>
+                <td> <Link to={`/comprarProductos/${tiendaU.idU}@${tiendaU.nombreU}`} className="btn btn-sm btn-primary">Comprar productos</Link></td>
             </tr>
             ))}
         </tbody>

@@ -137,6 +137,10 @@ const TareasEditar = () => {
                             <form onSubmit={onSubmit} noValidate>
                                 <div className="card-body">
                                 <div className="form-group">
+                                        <label htmlFor="nombre">Nombre Tienda:</label>
+                                        <input type="text" className="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre de la tienda" value={nombreUser} onChange={onChange} required />
+                                    </div>
+                                <div className="form-group">
                                         <label htmlFor="nombre">Nombre:</label>
                                         <input type="text" className="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del producto" value={nombre} onChange={onChange} required />
                                     </div>

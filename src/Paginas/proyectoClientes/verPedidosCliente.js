@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Footer from "../../componentes/Footer";
 import Navbar from "../../componentes/Navbar";
@@ -14,10 +14,15 @@ const VerPedidosCliente = () => {
     ]);   
 
     const userId = localStorage.getItem("id");
+    const nombreUser = localStorage.getItem("nombre");
+    const { nombreProd } = useParams();
+    const tituloPag = `Pedidos de ${nombreUser}`
+    
 
     const cargarPedidos = async () => {
         try {
             var response = await APIInvoke.invokeGET(`/ventas?userId=${userId}`);
+            
 
             console.log('Respuesta de la API:', response); 
 
@@ -42,7 +47,7 @@ const VerPedidosCliente = () => {
         <div className="content-wrapper">
 
             <ContentHeader
-                titulo={"Pedidos"}
+                titulo={tituloPag}
                 breadCrumb1={"Inicio"}
                 breadCrumb2={"Pedidos"}
                 ruta1={"/menu"}
@@ -66,7 +71,7 @@ const VerPedidosCliente = () => {
                                 <tr>
                                     <th style={{ width: '10%' }}>#</th>
                                     <th style={{ width: '10%' }}># Producto</th>
-                                    <th style={{ width: '10%' }}>Nombre Producto</th>
+                                    <th style={{ width: '10%' }}>Nombre Tienda</th>
                                     <th style={{ width: '10%' }}>Nombre cliente</th>
                                     <th style={{ width: '10%' }}>Direccion</th>
                                     <th style={{ width: '10%' }}>Telefono</th>

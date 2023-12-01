@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import APIInvoke from "../../utils/APIInvoke.js";
-import axios from 'axios';
 import swal from "sweetalert";
 
 const Login = () => {
@@ -105,7 +104,6 @@ const Login = () => {
         }
     }
 
-
     const onSubmit = (e) => {
         e.preventDefault();
         iniciarSesion();
@@ -144,7 +142,7 @@ const Login = () => {
                     className="form-control"
                     placeholder="Contraseña"
                     name="password"
-                    id='name'
+                    id='password'
                     value={password}
                     onChange={onChange}
                     required

@@ -5,3 +5,7 @@ body{
     background-repeat: no-repeat;
     margin: auto;
 }
+
+.gift{
+    background-image: url("https://media.tenor.com/ZJT4S4lpfpIAAAAd/perro-bailando.gif");
+}

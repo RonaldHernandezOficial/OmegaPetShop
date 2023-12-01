@@ -9,7 +9,8 @@ import { Link, useParams } from "react-router-dom";
 import SidebarContainerClientes from "../../componentes/SidebarContainerClientes";
 
 const VerProductosClientes = () => {
-
+    const userId = localStorage.getItem("id"); //Obtener el user del id, para las validaciones de usuario
+    const nombreUser = localStorage.getItem("nombre");
 
     const [productos, setProductos] = useState([]);
 
@@ -21,7 +22,7 @@ const VerProductosClientes = () => {
 
     const cargarProductos = async () => {
         try {
-            var response = await APIInvoke.invokeGET(`/productos?idT=${idTienda}`);
+            var response = await APIInvoke.invokeGET(`/productos?idU=${idTienda}`);
             console.log('Respuesta de la API:', response); // Verifica la respuesta
 
             if (Array.isArray(response) && response.length > 0) {
@@ -38,7 +39,7 @@ const VerProductosClientes = () => {
         cargarProductos();
     }, []);
 
-    const eliminarProducto = async (e, idProducto, idTienda) => { 
+    const eliminarProducto = async (e, idProducto, idUser) => { 
         e.preventDefault();
         const verificarExistenciaTarea = async (idProducto) => {
             try {
@@ -58,7 +59,7 @@ const VerProductosClientes = () => {
         const productoExistente = await verificarExistenciaTarea(idProducto);
 
         if (productoExistente) {
-            const response = await APIInvoke.invokeDELETE(`/productos/${idProducto}?idT=${idTienda}`);
+            const response = await APIInvoke.invokeDELETE(`/productos/${idProducto}?idU=${userId}`);
             const msg = "Producto Eliminado Correctamente";
             new swal({
                 title: "Informacion",
@@ -123,9 +124,9 @@ const VerProductosClientes = () => {
                                 <thead>
                                     <tr>
                                         <th style={{ width: '15%' }}>#</th>
-                                        <th style={{ width: '10%' }}>Nombre</th>
+                                        <th style={{ width: '10%' }}>Nombre Tienda</th>
+                                        <th style={{ width: '10%' }}>Nombre Producto</th>
                                         <th style={{ width: '10%' }}>Precio</th>
-                                        <th style={{ width: '10%' }}>Tienda</th>
                                         <th style={{ width: '10%' }}>Categoria</th>
                                     </tr>
                                 </thead>
@@ -134,9 +135,9 @@ const VerProductosClientes = () => {
                                         productos.map(item =>
                                             <tr key={item.id}>
                                                 <td>{item.id}</td>
+                                                <td>{item.nombreU}</td>
                                                 <td>{item.nombre}</td>
                                                 <td>{item.precio}</td>
-                                                <td>{nombreTienda}</td>
                                                 <td>{item.idC}</td>
                                             </tr>
                                         )}

@@ -25,15 +25,15 @@ const CrearCuentaAdministrador = () => {
     };
 
     useEffect(() => {
-    document.getElementById("nombre").focus();
+    document.getElementById("email").focus();
     }, [])
 
     const crearCuenta = async () => {
 
-    const verificarExistenciaUsuario = async (nombre) => {
+    const verificarExistenciaUsuario = async (email) => {
             try {
                 const response = await APIInvoke.invokeGET(
-                    `/Usuarios?nombre=${nombre}`
+                    `/Usuarios?email=${email}`
                 );
                 if (response && response.length > 0) {
                     return true; // El usuario ya existe
@@ -80,7 +80,7 @@ const CrearCuentaAdministrador = () => {
             }
         });
     } else {
-        const usuarioExistente = await verificarExistenciaUsuario(nombre);     
+        const usuarioExistente = await verificarExistenciaUsuario(email);     
         const data = {
         nombre: usuario.nombre,
         email: usuario.email,

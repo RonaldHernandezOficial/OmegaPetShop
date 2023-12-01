@@ -8,14 +8,14 @@ const CrearCuenta = () => {
     const [usuario, setUsuario] = useState({
     nombre: "",
     email: "",
-    nit: "",
+    direccion: "",
     telefono: "",
     password: "",
     confirmar: "",
     rol: 'cliente' //El rol solo se cambiara si se necesita cambiarlo, es el bd.json
     });
 
-    const { nombre, email, nit, telefono, password, confirmar, rol } = usuario;
+    const { nombre, email, direccion, telefono, password, confirmar, rol } = usuario;
 
     const onChange = (e) => {
     setUsuario({
@@ -25,15 +25,15 @@ const CrearCuenta = () => {
     };
 
     useEffect(() => {
-    document.getElementById("nombre").focus();
+    document.getElementById("email").focus();
     }, [])
 
     const crearCuenta = async () => {
 
-    const verificarExistenciaUsuario = async (nombre) => {
+    const verificarExistenciaUsuario = async (email) => {
             try {
                 const response = await APIInvoke.invokeGET(
-                    `/Usuarios?nombre=${nombre}`
+                    `/Usuarios?email=${email}`
                 );
                 if (response && response.length > 0) {
                     return true; // El usuario ya existe
@@ -80,11 +80,11 @@ const CrearCuenta = () => {
             }
         });
     } else {
-        const usuarioExistente = await verificarExistenciaUsuario(nombre);     
+        const usuarioExistente = await verificarExistenciaUsuario(email);     
         const data = {
         nombre: usuario.nombre,
         email: usuario.email,
-        nit: usuario.nit,
+        direccion: usuario.direccion,
         telefono: usuario.telefono,
         password: usuario.password,
         rol: usuario.rol // Hay que asegurarse que se envie bien al servidor
@@ -128,11 +128,10 @@ const CrearCuenta = () => {
                 setUsuario({
                     nombre: "",
                     email: "",
-                    nit: "",
+                    direccion: "",
                     telefono: "",
                     password: "",
                     confirmar: "",
-
                 })
             }
         }
@@ -193,12 +192,12 @@ const CrearCuenta = () => {
 
                 <div className="input-group mb-3">
                 <input
-                    type="number"
+                    type="string"
                     className="form-control"
-                    placeholder="Nit"
-                    id="nit"
-                    name="nit"
-                    value={nit}
+                    placeholder="Dirección"
+                    id="direccion"
+                    name="direccion"
+                    value={direccion}
                     onChange={onChange}
                     required
                 />
