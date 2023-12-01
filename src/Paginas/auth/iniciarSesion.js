@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 
 const IniciarSesion = () => {
+
+    //SI SE PUDO BANDAAAAAAA, LO LOGRE
     return (
         <div style={{ textAlign: 'center' }}>
         <div className="wrapper">

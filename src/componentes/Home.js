@@ -49,13 +49,6 @@ const Home = () => {
                 </li>
 
                 <li className="nav-item" style={listItemStyle}>
-                    <Link to={"/verPedidos"} className="nav-link">
-                        <i className="nav-icon fas fa-truck" />
-                        <p>Pedidos</p>
-                    </Link>
-                </li>
-
-                <li className="nav-item" style={listItemStyle}>
                     <Link to={"/"} className="nav-link">
                         <i className="nav-icon fas fa-user" />
                         <p>Crear Cuenta</p>

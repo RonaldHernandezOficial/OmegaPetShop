@@ -26,6 +26,48 @@
       "password": "123456",
       "rol": "administrador",
       "id": 3
+    },
+    {
+      "nombre": "Perritos",
+      "email": "perritos@gmail.com",
+      "nit": "953980",
+      "telefono": "90238532",
+      "password": "123456",
+      "rol": "administrador",
+      "id": 4
+    },
+    {
+      "nombre": "Mordidas",
+      "email": "mordidas@administrador.com",
+      "nit": "901236447",
+      "telefono": "3214705892",
+      "password": "123456",
+      "rol": "administrador",
+      "id": 5
+    },
+    {
+      "nombre": "Mordidas",
+      "email": "mordidas@administrador.com",
+      "nit": "901236447",
+      "telefono": "3214705892",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "nombre": "Mordidas 1",
+      "email": "mordidas@administrador.com",
+      "nit": "901236447",
+      "telefono": "3214705892",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "nombre": "Mordidas 1",
+      "email": "mordidas1@administrador.com",
+      "nit": "901236447",
+      "telefono": "3214705892",
+      "password": "123456",
+      "id": 8
     }
   ],
   "Categorias": [],
@@ -52,6 +94,26 @@
       "nomreUser": "Maria",
       "userId": "2",
       "id": 2
+    },
+    {
+      "idP": "4",
+      "nombreProd": "Perritos",
+      "nombre": "Maria",
+      "direccion": "Cl 129 c 399 - 32323233232323232",
+      "telefono": "3523253232",
+      "nomreUser": "Maria",
+      "userId": "2",
+      "id": 3
+    },
+    {
+      "idP": "5",
+      "nombreProd": "Mordidas",
+      "nombre": "Maria",
+      "direccion": "Cll 52 13 65",
+      "telefono": "3214705892",
+      "nomreUser": "Maria",
+      "userId": "2",
+      "id": 4
     }
   ],
   "Productos": [
@@ -70,6 +132,22 @@
       "precio": "40000",
       "nombreU": "Patitas",
       "id": 2
+    },
+    {
+      "idU": "4",
+      "nombreU": "Perritos",
+      "idC": "Snacks",
+      "nombre": "Mirringo",
+      "precio": "20000",
+      "id": 3
+    },
+    {
+      "idU": "5",
+      "nombreU": "Mordidas",
+      "idC": "Snacks",
+      "nombre": "Galletas de harina para perro",
+      "precio": "1500",
+      "id": 4
     }
   ]
 }
